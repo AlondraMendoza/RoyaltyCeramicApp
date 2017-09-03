@@ -1,17 +1,307 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link href="css/metro.css" rel="stylesheet">
-    <script src="js/jquery.js"></script>
-    <script src="js/metro.js"></script>
-</head>
-<body>
-<center>
-<div class="input-control text big-input full-size">
-<input type="text" placeholder="Teclea la clave del carro">
-</div>
-<button class="button cycle-button" style="background-color: #000000"></button>
-<button class="button cycle-button" style="background-color: #000000"></button>
-</center>
-</body>
+    <head>
+        <link href="css/metro.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
+        <link href="css/metro-icons.min.css" rel="stylesheet">
+        <script src="js/metro.js"></script>
+        <script>
+            function MostrarInfoCarro()
+            {
+                $("#InfoCarro").fadeIn();
+                $("#InfoProductosCarro").fadeOut();
+            }
+            function MostrarProductosCarro()
+            {
+                $("#InfoProductosCarro").fadeIn();
+                $("#InfoCarro").fadeOut();
+            }
+            function AbrirVentana()
+            {
+                metroDialog.open('#ventanacorreccion');
+            }
+            $(document).ready(function () {
+                $(".btn-close").click(function () {
+                    metroDialog.close('#ventanacorreccion');
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div id="ventanacorreccion" data-role="dialog" class="dialog"  data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
+            <div class="window success">
+                <div class="window-caption">
+                    <span class="window-caption-icon"><span class="mif-windows"></span></span>
+                    <span class="window-caption-title">Corrección de producto</span>
+                    <span class="btn-close"></span>
+                </div>
+                <div class="window-content">
+                    <table class="table  hovered border ">
+                        <thead class="center">
+                            <tr>
+                                <th style="text-align: center">Modelo</th>
+                                <th style="text-align: center">Producto</th>
+                                <th style="text-align: center">Color</th>
+                                <th style="text-align: center">Cantidad</th>
+                                <th style="text-align: center">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="center"><div class="input-control text big-input"><input type="text" value="Partenón" class="big-input"></div></td>
+                                <td class="center">
+                                    <div class="dropdown-button">
+                                        <button class="button dropdown-toggle">Lavabo</button>
+                                        <ul class="split-content d-menu" data-role="dropdown">
+                                            <li><a href="#">Lavabo</a></li>
+                                            <li><a href="#">Taza</a></li>
+                                            <li><a href="#">Tapa</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="center">
+                                    <div class="dropdown-button">
+                                        <button class="button dropdown-toggle">Crimson</button>
+                                        <ul class="split-content d-menu" data-role="dropdown">
+                                            <li><a href="#"><button class="button cycle-button bg-darkCrimson"></button> Crimson</a></li>
+                                            <li><a href="#"><button class="button cycle-button bg-teal"></button> Teal</a></li>
+                                            <li><a href="#"><button class="button cycle-button bg-darkGreen"></button> Green</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkGreen bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="metroDialog.close('#ventanacorreccion');">
+                                        <span class="icon mif-floppy-disk"></span>
+                                        <span class="title">Guardar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="app-bar" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
+            <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
+
+            <ul class="app-bar-menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Contacto</a></li>
+                <ul class="app-bar-menu">
+                    <li><a href="">Soporte</a></li>
+                    <li>
+                        <a href="" class="dropdown-toggle">Productos</a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Producto 1</a></li>
+                            <li><a href="">Producto 2</a></li>
+                            <li><a href="">Producto 3</a></li>
+                            <li><a href="">Producto 4</a></li>
+                            <li class="divider"></li>
+                            <li><a href="" class="dropdown-toggle">Otros productos</a>
+                                <ul class="d-menu" data-role="dropdown">
+                                    <li><a href="">Producto especial 1</a></li>
+                                    <li><a href="">Producto especial 2</a></li>
+                                    <li><a href="">Surface especial 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="">Support</a></li>
+                    <li><a href="">Help</a></li>
+                </ul>
+            </ul>
+            <div class="app-bar-element place-right">
+                <a class="dropdown-toggle fg-white"><span class="mif-enter"></span> JPEREZ</a>
+                <div class="app-bar-drop-container bg-white fg-dark place-right"
+                     data-role="dropdown" data-no-close="true">
+                    <div class="padding10" style="width: 200px;">
+                        <center>
+                            <img src="img/user.png" style="width: 100px;">
+                            <br>
+                            <b>Juan Pérez López</b><br>
+                            Planta de producción
+                            <i>Administrador</i>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
+            <h1><!--<span class="mif-ani-hover-horizontal mif-ani-fast mif-arrow-left fg-black" style="border:2px #000000 solid; border-radius: 50%"></span>--> BÚSQUEDA DE CARRO</h1><br>
+            <center>
+                <div class="input-control text big-input full-size">
+                    <input type="text" placeholder="Teclea la clave del carro" onkeyup="MostrarInfoCarro()">
+                    <button class="button"><span class="mif-search"></span></button>
+                </div><br><br>
+                <br>
+                <div id="InfoCarro" style="display: none">
+                    <table class="table  hovered border bordered">
+                        <thead class="center">
+                            <tr>
+                                <th colspan="4" style="text-align: center">RESULTADOS DE BÚSQUEDA</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center">Clave Carro</th>
+                                <th style="text-align: center"># productos</th>
+                                <th style="text-align: center"># Fecha quemado</th>
+                                <th style="text-align: center">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="center">3546BT</td>
+                                <td class="center"> 35</td>
+                                <td class="center">25 de Septiembre de 2017</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-orange bg-active-darkBlue fg-white rounded block-shadow-warning text-shadow" onclick="MostrarProductosCarro()">
+                                        <span class="icon mif-any-hover-heartbeat mif-checkmark"></span>
+                                        <span class="title">Verificar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">3547BT</td>
+                                <td class="center">29</td>
+                                <td class="center">25 de Octubre de 2017</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-orange bg-active-darkBlue fg-white rounded block-shadow-warning text-shadow" onclick="MostrarProductosCarro()">
+                                        <span class="icon mif-any-hover-heartbeat mif-checkmark"></span>
+                                        <span class="title">Verificar</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="InfoProductosCarro" style="display: none">
+                    <table class="table  hovered border bordered">
+                        <thead class="center">
+                            <tr>
+                                <th colspan="5" style="text-align: center">LISTA DE PRODUCTOS CARRO: 3546BT</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center">Modelo</th>
+                                <th style="text-align: center">Producto</th>
+                                <th style="text-align: center">Color</th>
+                                <th style="text-align: center">Cantidad</th>
+                                <th style="text-align: center">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-darkCrimson"></button><br>Crimson</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-cyan"></button><br>Cyan</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-brown"></button><br>Brown</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-green"></button><br>Green</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-magenta"></button><br>Magenta</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-darkCrimson"></button><br>Crimson</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-teal"></button><br>Teal</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-olive"></button><br>Olive</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Partenón</td>
+                                <td class="center">Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-Violet"></button><br>Violet</td>
+                                <td class="center">10</td>
+                                <td class="center">
+                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
+                                        <span class="icon mif-pencil"></span>
+                                        <span class="title">Corregir</span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </center>
+        </div>
+    </body>
 </html>
