@@ -2263,7 +2263,8 @@ a.tag {
 }
 .app-bar .app-bar-element:hover,
 .app-bar .app-bar-element:active {
-    background-color: #005696;
+    background-color: #B82134;
+    color:black !important;
 }
 .app-bar .app-bar-element.branding {
     padding-left: 1rem;
@@ -2271,7 +2272,8 @@ a.tag {
 }
 .app-bar .app-bar-element.branding.no-hover:hover,
 .app-bar .app-bar-element.branding.no-hover:active {
-    background-color: #0072c6;
+    background-color: white;
+    color:brown;
 }
 .app-bar .app-bar-element .d-menu {
     top: 100%;
@@ -2289,6 +2291,7 @@ a.tag {
 }
 .app-bar .app-bar-element .d-menu .dropdown-toggle:before {
     border-color: #1d1d1d;
+    
 }
 .app-bar .app-bar-divider {
     display: block;
@@ -2300,7 +2303,8 @@ a.tag {
     padding: 0;
 }
 .app-bar .dropdown-toggle:before {
-    border-color: #ffffff;
+    border-color: #cccccc;
+    
 }
 .app-bar .app-bar-menu {
     display: block;
@@ -2326,7 +2330,8 @@ a.tag {
 .app-bar .app-bar-menu > li > a:hover,
 .app-bar .app-bar-menu > li:active,
 .app-bar .app-bar-menu > li > a:active {
-    background-color: #005696;
+    background-color: white;
+    color: brown;
 }
 .app-bar .app-bar-menu > li.branding,
 .app-bar .app-bar-menu > li > a.branding {
@@ -2423,7 +2428,7 @@ a.tag {
 }
 .app-bar .app-bar-menu > li.dropdown-toggle:before,
 .app-bar .app-bar-menu > li > a.dropdown-toggle:before {
-    border-color: #ffffff;
+    border-color: #cccccc;
     display: block;
 }
 .app-bar .app-bar-menu > li {
@@ -4602,13 +4607,12 @@ a.image-button {
     cursor: pointer;
     display: inline-block;
     outline: none;
-    font-size: 1.05rem;
+    font-size: 1rem;
     margin: .15625rem 0;
     position: relative;
     width: 5.75rem;
     height: 5.75rem;
     text-align: center;
-    font-size: .75rem;
     line-height: 1;
 }
 .shortcut-button.default {
