@@ -24,10 +24,44 @@
                 $("#ColorProd").fadeOut();
                 $("#Eleccion2").fadeIn();
             }
+            function Siguiente()
+            {
+                $("#Tabla").fadeIn();
+                $("#Inicio").fadeOut();
+                $("#MostrarProd").fadeOut();
+                $("#ModeloProd").fadeOut();
+                $("#NomProd").fadeOut();
+                $("#ColorProd").fadeOut();
+                $("#Eleccion").fadeOut();
+                $("#PiezasProd").fadeOut();
+                $("#Eleccion2").fadeOut();
+            }
+            function Cancelar()
+            {
+                $("#Inicio").fadeIn();
+                $("#MostrarProd").fadeIn();
+                $("#ModeloProd").fadeOut();
+                $("#NomProd").fadeOut();
+                $("#ColorProd").fadeOut();
+                $("#Eleccion").fadeOut();
+                $("#PiezasProd").fadeOut();
+                $("#Eleccion2").fadeOut();
+            }
+            function Guardar()
+            {
+                $("#Tabla").fadeOut();
+                 metroDialog.open('#VentanaGuardar');
+            }
+            $(document).ready(function () {
+                $(".btn-close").click(function () {
+                    metroDialog.close('#VentanaGuardar');
+                });
+            })
             $(function()
             {
                 $("#datepicker").datepicker();
             });
+           
         </script>
         <title>Royalty Ceramic</title>
     </head>
@@ -82,11 +116,11 @@
             <h1><!--<span class="mif-ani-hover-horizontal mif-ani-fast mif-arrow-left fg-black" style="border:2px #000000 solid; border-radius: 50%"></span>--> 
             CAPTURA DE CARRO</h1><br>
             <h2><center>Ingresar Datos</center></h2><br>
+                <div id="Inicio">
                 <strong><h3>Clave del Carro:</h3></strong>
-           
                 <div class="input-control text big-input full-size">
                     <input type="text" id="cveCarro" placeholder="Teclea la clave del carro"></div>
-                <strong><h3>Producto:</h3></strong>
+                <strong><h3>Producto:</h3></strong></div>
                 <div class="input-control text big-input full-size" id="NomProd" style="display: none">
                     <input type="text" readonly placeholder="Tazas"></input></div>
                 <!--Productos-->
@@ -170,15 +204,63 @@
                     <div class="input-control text big-input full-size">
                     <input type="text" id="piezas"></div>
                 <strong><h3>Fecha de vacio:</h3></strong>
-                    <div class="input-control text big-input full-size" data-role="datepicker" id="datepicker">
+                    <div class="input-control text big-input full-size" data-role="datepicker" id="datepicker" data-locale="es" data-format="yyyy-mm-dd">
                     <input type="text">
                     <button class="button"><span class="mif-calendar"></span></button>
+                    </div><br><br>
+                    <div align="right">
+                    <div class="input-control text big-input medium-size">
+                    <button class="button primary" onclick="Siguiente()">Siguiente</button></div>
+                    <div class="input-control text big-input medium-size">
+                    <button class="button danger" onclick="Cancelar()">Cancelar</button></div>
                     </div>
-                <br><br>
-                    <div class="input-control text big-input full-size">
-                    <button class="button primary">Siguiente</button></div>
                 </div>
-
+                <div id="Tabla" style="display: none">
+                    <table class="table  hovered border bordered">
+                        <thead class="center">
+                            <tr>
+                                <th colspan="5" style="text-align: center">CARRO H1C1</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center">Producto</th>
+                                <th style="text-align: center">Modelo</th>
+                                <th style="text-align: center">Color</th>
+                                <th style="text-align: center"># Piezas</th>
+                                <th style="text-align: center">Fecha de vacio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="center">Taza</td>
+                                <td class="center">Dinastía</td>
+                                <td class="center">Blanco</td>
+                                <td class="center">2</td>
+                                <td class="center">2017-09-11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div align="right">
+                    <div class="input-control text big-input medium-size">
+                    <button class="button primary" onclick="">Agregar Producto</button></div>
+                    <div class="input-control text big-input medium-size">
+                    <button class="button success" onclick="Guardar()">Finalizar  <span class="icon mif-floppy-disk"></span></button></div>
+                    </div>
+                </div>
+                <div id="VentanaGuardar" data-role="dialog" class="dialog"  data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
+                    <div class="window success">
+                    <div class="window-caption">
+                        <span class="window-caption-icon"><span class="mif-windows"></span></span>
+                        <span class="window-caption-title">Datos Guardados</span>
+                        <span class="btn-close"></span>
+                    </div>
+                    <div class="window-content">
+                    <br><h3>Clave del carro H1C1170911-1</h3><br>
+                    <div class="input-control text">
+                    <button class="button success" onclick="Cancelar()">Nuevo Carro</button></div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
             <!--
                 <strong><h3>Color:</h3></strong>
             
