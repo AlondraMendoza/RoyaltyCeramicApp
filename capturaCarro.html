@@ -12,16 +12,34 @@
                 $("#MostrarProd").fadeOut();
                 $("#NomProd").fadeIn();
             }
+             function AbrirProd2()
+            {
+                $("#ModeloProd2").fadeIn();
+                $("#MostrarProd").fadeOut();
+                $("#NomProd2").fadeIn();
+            }
             function AbrirMod()
             {
                 $("#ColorProd").fadeIn();
                 $("#ModeloProd").fadeOut();
                 $("#Eleccion").fadeIn();
             }
+            function AbrirMod2()
+            {
+                $("#ColorProd2").fadeIn();
+                $("#ModeloProd2").fadeOut();
+                $("#EleccionM").fadeIn();
+            }
             function AbrirCol()
             {
                 $("#PiezasProd").fadeIn();
                 $("#ColorProd").fadeOut();
+                $("#Eleccion2").fadeIn();
+            }
+            function AbrirCol2()
+            {
+                $("#PiezasProd").fadeIn();
+                $("#ColorProd2").fadeOut();
                 $("#Eleccion2").fadeIn();
             }
             function Siguiente()
@@ -46,6 +64,10 @@
                 $("#Eleccion").fadeOut();
                 $("#PiezasProd").fadeOut();
                 $("#Eleccion2").fadeOut();
+                $("#ModeloProd2").fadeOut();
+                $("#EleccionM").fadeOut();
+                $("#ColorProd2").fadeOut();
+                $("#NomProd2").fadeOut();
             }
             function Guardar()
             {
@@ -123,6 +145,9 @@
                 <strong><h3>Producto:</h3></strong></div>
                 <div class="input-control text big-input full-size" id="NomProd" style="display: none">
                     <input type="text" readonly placeholder="Tazas"></input></div>
+                    <!--Ejemplo de mingitorios-->
+                <div class="input-control text big-input full-size" id="NomProd2" style="display: none">
+                    <input type="text" readonly placeholder="Mingitorios"></input></div>
                 <!--Productos-->
                 <div data-role="group" data-group-type="one-state" id="MostrarProd">
                     <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd()">
@@ -133,7 +158,7 @@
                     <input type="image" src="imagenes/Tanques.png" height="190px;" width="190px;" title="Tanques"/><b>Tanques</b></button>
                     <button class="button" style="width: 210px; height: 210px;" onclick="AbrirProd()">
                     <input type="image" src="imagenes/Pedestales.png" height="190px;" width="190px;" title="Pedestales"/><b>Pedestales</b></button>
-                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd()">
+                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd2()">
                     <input type="image" src="imagenes/Mingitorios.png" height="190px;" width="190px;" title="Mingitorios"/><b>Mingitorios</b></button>
                     <button class="button" style="width: 210px; height: 210px;" onclick="AbrirProd()">
                     <input type="image" src="imagenes/Accesorios.jpg" height="190px;" width="190px;" title="Accesorios"/><b>Accesorios</b></button>
@@ -154,12 +179,27 @@
                     <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod()">
                     <input type="image" src="imagenes/Tazas/OnePieceInfantil.png" height="190px;" width="190px;" title="One Piece Infantil"/><b>One Piece infantil</b></button>
                 </div>
+                <!--Modelos Mingitorios-->
+                <div data-role="group" data-group-type="one-state" id="ModeloProd2" style="display: none">
+                <strong><h3>Modelo:</h3></strong>
+                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod2()">
+                    <input type="image" src="imagenes/Mingitorios/Baron.png" height="190px;" width="190px;" title="Barón"/><b>Barón</b></button>
+                    <button class="button" style="width: 210px; height: 210px;" onclick="AbrirMod2()">
+                    <input type="image" src="imagenes/Mingitorios/Grand.png" height="190px;" width="190px;" title="Grand"/><b>Grand (Seco)</b></button>
+                </div>
                 <!--Mostrar modelo seleccionado-->
                 <div id="Eleccion" style="display: none">
                 <strong><h3>Modelo:</h3></strong>
                 <div class="input-control text big-input full-size">
                 <input type="text" readonly placeholder="Dinastía"></input></div>
                 <div align="center"><input type="image" src="imagenes/Tazas/Dinastia.png" height="190px;" width="190px;" title="Dinastía"/></div>
+                </div>
+                <!--Mostrar modelo seleccionado Mingitorios-->
+                <div id="EleccionM" style="display: none">
+                <strong><h3>Modelo:</h3></strong>
+                <div class="input-control text big-input full-size">
+                <input type="text" readonly placeholder="Barón"></input></div>
+                <div align="center"><input type="image" src="imagenes/Mingitorios/Baron.png" height="190px;" width="190px;" title="Barón"/></div>
                 </div>
                 <!--Colores-->
                 <div data-role="group" data-group-type="one-state" id="ColorProd" style="display: none">
@@ -190,7 +230,23 @@
                     <button class="button cycle-button" style='background: url("colores/colorAzulHolanda2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Azúl Holanda</b></button>
                 </div>
-                <!--Mostrar modelo seleccionado-->
+                <!--Colores Mingitorios-->
+                <div data-role="group" data-group-type="one-state" id="ColorProd2" style="display: none">
+                <strong><h3>Color:</h3></strong>
+                    <button class="button cycle-button" style='background: url("colores/colorBlanco2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol2()">
+                    <b style="color: white">Blanco</b></button>
+                    <button class="button cycle-button" style='background: url("colores/colorHueso2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol2()">
+                    <b style="color: white">Hueso</b></button>
+                </div>
+                <!--Mostrar color seleccionado-->
+                <div id="Eleccion2" style="display: none">
+                <strong><h3>Color:</h3></strong>
+                <div class="input-control text big-input full-size">
+                <input type="text" readonly placeholder="Blanco"></input></div>
+                <div align="center">
+                    <button class="button cycle-button" style='background: url("colores/colorBlanco2.jpg"); width: 90px; height: 90px;'></div>
+                </div>
+                <!--Mostrar color seleccionado mingitorios-->
                 <div id="Eleccion2" style="display: none">
                 <strong><h3>Color:</h3></strong>
                 <div class="input-control text big-input full-size">
@@ -261,6 +317,17 @@
                     </div>
                     </div>
                 </div>
+                
+
+
+
+
+
+                
+                
+                
+                
+
                 <!--<strong><h3>Color:</h3></strong>            
                 <div data-role="group" data-group-type="one-state">
                     <button class="button" style='background:url("colores/colorAzulCielo2.jpg")no-repeat center; width:300px; height:300px;' >Azul Cielo</button>
