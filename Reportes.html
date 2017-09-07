@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/metro.css" rel="stylesheet">
+        <link href="css/metro-responsive.min.css" rel="stylesheet">
+        <link href="css/metro-schemes.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
+        <link href="css/metro-icons.min.css" rel="stylesheet">
+        <script src="js/metro.js"></script>
+        <script>
+
+            function Notificacion()
+            {
+                $.Notify({
+                    caption: 'Correcto',
+                    content: 'La salida de mercancía fue guardada con éxito',
+                    type: 'success'
+                });
+            }
+            function NotificacionE()
+            {
+                $.Notify({
+                    caption: 'Cancelado',
+                    content: 'Se canceló la salida de mercancía',
+                    type: 'alert'
+                });
+                $("#Tabla").fadeOut();
+                $("#claveprod").val("");
+            }
+            function MostrarProd()
+            {
+
+                $("#Tabla").fadeIn();
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="app-bar fixed-top" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
+            <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
+
+            <ul class="app-bar-menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Contacto</a></li>
+                <ul class="app-bar-menu">
+                    <li><a href="">Soporte</a></li>
+                    <li>
+                        <a href="" class="dropdown-toggle">Productos</a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Línea Residencial</a></li>
+                            <li><a href="">Línea Comercial</a></li>
+                            <li><a href="">Lavabos</a></li>
+                            <li><a href="">Mingitorios</a></li>
+                            <li class="divider"></li>
+                            <li><a href="" class="dropdown-toggle">Otros productos</a>
+                                <ul class="d-menu" data-role="dropdown">
+                                    <li><a href="">Accesorios</a></li>
+                                    <li><a href="">Producto especial 2</a></li>
+                                    <li><a href="">Producto especial 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </ul>
+            <div class="app-bar-element place-right">
+                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;David Fernandez</a>
+                <div class="app-bar-drop-container bg-white fg-dark place-right"
+                     data-role="dropdown" data-no-close="true">
+                    <div class="padding10" style="width: 200px;">
+                        <center>
+                            <img src="img/user.png" style="width: 100px;">
+                            <br>
+                            <b>David Fernandez</b><br>
+                            Planta de producción
+                            <i>Administrador</i>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
+            <br><br><br>
+            <h1>
+                <div class="dropdown-button">
+                    <button class="button dropdown-toggle large-button fg-darkCrimson" style="size: "> <span class="mif-link"></span></button>
+                    <ul class="split-content d-menu" data-role="dropdown" style="border-color:white">
+                        <li><a href="#">Captura Carro</a></li>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Reportes</a></li>
+                    </ul>
+                </div>
+                Panel de control</h1><br>
+            <center>
+                <div class="panel warning">
+                    <div class="heading " >
+                        <span class="icon mif-home bg-darkOrange"></span>
+                        <span class="title">Capturas</span>
+                    </div>
+                    <div class="content">
+                        <br><br>
+                        <button class="command-button icon-left bg-gray fg-white">
+                            <span class="icon mif-users"></span>
+                            Captura
+                            <small>Captura de trabajadores nuevos</small>
+                        </button>
+                        <button class="command-button icon-left success">
+                            <span class="icon mif-stack3"></span>
+                            Captura
+                            <small>Productos nuevos</small>
+                        </button>
+                        <button class="command-button icon-left primary">
+                            <span class="icon mif-widgets"></span>
+                            Captura
+                            <small>Modelos nuevos</small>
+                        </button>
+                        <button class="command-button icon-left bg-darkTeal fg-white">
+                            <span class="icon mif-paint"></span>
+                            Captura
+                            <small>Colores nuevos</small>
+                        </button>
+                        <br><br>
+
+                        <br><br>
+
+                    </div>
+                </div>
+                <br><br>
+                <div class="panel warning">
+                    <div class="heading primary" >
+                        <span class="icon mif-home bg-darkOrange"></span>
+                        <span class="title">Reportes</span>
+                    </div>
+                    <div class="content">
+                        <br><br>
+                        <button class="command-button icon-left warning">
+                            <span class="icon mif-calendar"></span>
+                            Reporte
+                            <small>Reporte de producción por fecha</small>
+                        </button>
+                        <button class="command-button icon-left bg-brown fg-white">
+                            <span class="icon mif-checkmark"></span>
+                            Reporte
+                            <small>Reporte de producción por calidad</small>
+                        </button>
+                        <button class="command-button icon-left primary">
+                            <span class="icon mif-tools"></span>
+                            Reporte
+                            <small>Reporte de producción avanzado</small>
+                        </button>
+                        <br><br>
+                        <button class="command-button icon-left bg-darkMagenta fg-white">
+                            <span class="icon mif-water"></span>
+                            Reporte
+                            <small>Reporte de producción por color</small>
+                        </button>
+                        <button class="command-button icon-left bg-darkGreen fg-white">
+                            <span class="icon mif-fire"></span>
+                            Reporte
+                            <small>Reporte de producción por horno</small>
+                        </button>
+                        <button class="command-button icon-left bg-darkCobalt fg-white">
+                            <span class="icon mif-barcode"></span>
+                            Reporte
+                            <small>Reporte de producción por producto</small>
+                        </button>
+                        <br><br>
+
+                    </div>
+                </div>
+            </center>
+        </div>
+    </body>
+</html>

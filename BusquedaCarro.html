@@ -27,6 +27,72 @@
                     metroDialog.close('#ventanacorreccion');
                 });
             })
+            function Clasificar(clasificacion, boton)
+            {
+                if (clasificacion == "A")
+                {
+                    $("#boton" + boton).html("<button class='button success large-button'><span class='mif-checkmark fg-white'></span> Descargar etiqueta</button>");
+                } else
+                {
+                    var texto = '<button id="esmaltes1" onclick="SubClasificar(' + boton + ')" class="button rounded large-button fg-green"><span style="font-size: .8rem">Esmaltes</span></button> ';
+                    texto += '<button id="esmaltes1" onclick="SubClasificar(' + boton + ')"  class="button rounded large-button fg-darkOrange"><span style="font-size: .8rem">Pasta</span></button> ';
+                    texto += '<button id="esmaltes1" onclick="SubClasificar(' + boton + ')" class="button rounded  large-button fg-orange"><span style="font-size: .8rem">Vaciado</span></button> ';
+                    texto += '<button id="esmaltes1" onclick="SubClasificar(' + boton + ')"  class="button rounded large-button fg-ambar"><span style="font-size: .8rem">Pulido</span></button> ';
+                    texto += '<button id="esmaltes1" onclick="SubClasificar(' + boton + ')"  class="button rounded large-button fg-red"><span style="font-size: .8rem">Esmaltado</span></button> ';
+                    texto += '<button id="esmaltes1" onclick="SubClasificar(' + boton + ')"  class="button rounded large-button fg-cobalt"><span style="font-size: .8rem">Hornos</span></button> ';
+                    $("#boton" + boton).html(texto);
+                }
+
+            }
+            function SubClasificar(boton)
+            {
+                var texto = "<div class='input-control select full-size' style='height:80px;'>";
+                texto += "<select style='font-width:medium' onchange='CapturarVaciador(" + boton + ")'>";
+                texto += "<option>DOBLE CAPA</option>";
+                texto += "<option>PZA MAL MARMOLEADA</option>";
+                texto += "<option>PZA EXPLOTADA</option>";
+                texto += "<option>RIM DESPEGADO</option>";
+                texto += "<option>GTA PONCHADURA</option>";
+                texto += "<option>GTA BACIN</option>";
+                texto += "<option>GTA BACIN EXTERIOR</option>";
+                texto += "<option>GTA POZO</option>";
+                texto += "<option>GTA BASE ATRÁS LATERAL</option>";
+                texto += "<option>MEDALLON X DOBLE CAPA</option>";
+                texto += "<option>PZA DEFORMADA</option>";
+                texto += "<option>AGLOBADO</option>";
+                texto += "<option>POROS</option>";
+                texto += "<option>GTA RIM ANILLO</option>";
+                texto += "<option>GTA EN DESCARGA</option>";
+                texto += "<option>RESIDUO X MEDALLO(EXPLOYADO.)</option>";
+                texto += "<option>FIERRO X PASTA</option>";
+                texto += "<option>GTA FRENTE O ATRÁS</option>";
+                texto += "<option>GTA LATERAL</option>";
+                texto += "</select>";
+                texto += "</div>";
+                $("#boton" + boton).html(texto);
+            }
+            function Notificacion()
+            {
+                $.Notify({
+                    caption: 'Correcto',
+                    content: 'La información ha sido guardada con éxito',
+                    type: 'success'
+                });
+            }
+            function NotificacionE()
+            {
+                $.Notify({
+                    caption: 'Correcto',
+                    content: 'La nota de error ha sido registrada',
+                    type: 'warning'
+                });
+            }
+            function CapturarVaciador(boton)
+            {
+                var mensaje = "La clasificación ha sido guardada con éxito";
+                var texto = "<div class='input-control text full-size big-input' ><input type='text' placeholder='Teclea el nombre del vaciador'></div><br><button class='success button large-button' onclick='Notificacion()'>Guardar</button>";
+                $("#boton" + boton).html(texto);
+            }
         </script>
     </head>
     <body>
@@ -105,35 +171,35 @@
                     <li>
                         <a href="" class="dropdown-toggle">Productos</a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">Producto 1</a></li>
-                            <li><a href="">Producto 2</a></li>
-                            <li><a href="">Producto 3</a></li>
-                            <li><a href="">Producto 4</a></li>
+                            <li><a href="">Línea Residencial</a></li>
+                            <li><a href="">Línea Comercial</a></li>
+                            <li><a href="">Lavabos</a></li>
+                            <li><a href="">Mingitorios</a></li>
                             <li class="divider"></li>
                             <li><a href="" class="dropdown-toggle">Otros productos</a>
                                 <ul class="d-menu" data-role="dropdown">
-                                    <li><a href="">Producto especial 1</a></li>
+                                    <li><a href="">Accesorios</a></li>
                                     <li><a href="">Producto especial 2</a></li>
-                                    <li><a href="">Surface especial 3</a></li>
+                                    <li><a href="">Producto especial 3</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="">Support</a></li>
-                    <li><a href="">Help</a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
                 </ul>
             </ul>
             <div class="app-bar-element place-right">
-                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;Juan Pérez</a>
+                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;Karla Pérez</a>
                 <div class="app-bar-drop-container bg-white fg-dark place-right"
                      data-role="dropdown" data-no-close="true">
                     <div class="padding10" style="width: 200px;">
                         <center>
                             <img src="img/user.png" style="width: 100px;">
                             <br>
-                            <b>Juan Pérez López</b><br>
+                            <b>Karla Pérez López</b><br>
                             Planta de producción
-                            <i>Administrador</i>
+                            <i>Capturista de hornero</i>
                         </center>
                     </div>
                 </div>
@@ -153,7 +219,7 @@
                 Búsqueda de carro</h1><br>
             <center>
                 <div class="input-control text big-input full-size">
-                    <input type="text" placeholder="Teclea la clave del carro" onkeyup="MostrarInfoCarro()">
+                    <input type="text" placeholder="Ingrese el código de barras del carro" onkeyup="MostrarInfoCarro()">
                     <button class="button"><span class="mif-search"></span></button>
                 </div><br><br>
                 <br>
@@ -206,116 +272,104 @@
                                 <th style="text-align: center">Modelo</th>
                                 <th style="text-align: center">Producto</th>
                                 <th style="text-align: center">Color</th>
-                                <th style="text-align: center">Cantidad</th>
-                                <th style="text-align: center">Acción</th>
+                                <th style="text-align: center">Clasificación</th>
+                                <th style="text-align: center">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-darkCrimson"></button><br>Crimson</td>
-                                <td class="center">10</td>
+                                <td class="center"><img src="imagenes/Lavabos.png" width="100px" height="100px"><br>Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-darkCrimson" style="height: 80px;width: 80px"></button><br>Crimson</td>
+                                <td class="center" id="boton1">
+                                    <button id="cl1A" onclick="Clasificar('A', 1)" style="height: 70px;width: 70px" class="button cycle-button fg-green"><b style="font-size: 2rem">A</b></button>
+                                    <button id="cl1B" onclick="Clasificar('B', 1)" style="height: 70px;width: 70px" class="button cycle-button fg-orange"><b style="font-size: 2rem">B</b></button>
+                                    <button id="cl1C" onclick="Clasificar('C', 1)" style="height: 70px;width: 70px" class="button cycle-button fg-amber"><b style="font-size: 2rem">C</b></button>
+                                    <button id="cl1D" onclick="Clasificar('D', 1)" style="height: 70px;width: 70px" class="button cycle-button fg-red"><b style="font-size: 2rem">D</b></button>
+                                    <button id="cl1R" onclick="Clasificar('R', 1)" style="height: 70px;width: 70px" class="button cycle-button"><b style="font-size: 2rem">R</b></button>
+                                </td>
                                 <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
+                                    <button class="command-button bg-red fg-white" onclick="NotificacionE()">
+                                        <span class="icon mif-cancel"></span>
+                                        Nota de error
+                                        <small>El producto no se encuentra</small>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="center">Dinastía</td>
+                                <td class="center"><img src="imagenes/Tazas.png" width="100px" height="100px"><br>Taza</td>
+                                <td class="center"><button class="button cycle-button bg-gray" style="height: 80px;width: 80px"></button><br>Gray</td>
+                                <td class="center" id="boton2">
+                                    <button id="cl2A" onclick="Clasificar('A', 2)" style="height: 70px;width: 70px" class="button cycle-button fg-green"><b style="font-size: 2rem">A</b></button>
+                                    <button id="cl2B" onclick="Clasificar('B', 2)" style="height: 70px;width: 70px" class="button cycle-button fg-orange"><b style="font-size: 2rem">B</b></button>
+                                    <button id="cl2C" onclick="Clasificar('C', 2)" style="height: 70px;width: 70px" class="button cycle-button fg-amber"><b style="font-size: 2rem">C</b></button>
+                                    <button id="cl2D" onclick="Clasificar('D', 2)" style="height: 70px;width: 70px" class="button cycle-button fg-red"><b style="font-size: 2rem">D</b></button>
+                                    <button id="cl2R" onclick="Clasificar('R', 2)" style="height: 70px;width: 70px" class="button cycle-button"><b style="font-size: 2rem">R</b></button>
+                                </td>
+                                <td class="center">
+                                    <button class="command-button bg-red fg-white" onclick="NotificacionE()">
+                                        <span class="icon mif-cancel"></span>
+                                        Nota de error
+                                        <small>El producto no se encuentra</small>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">Flux</td>
+                                <td class="center"><img src="imagenes/Lavabos.png" width="100px" height="100px"><br>Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-darkCobalt" style="height: 80px;width: 80px"></button><br>Cobalt</td>
+                                <td class="center">
+                                    <button onclick="Clasificar('A', 3)" style="height: 70px;width: 70px" class="button cycle-button fg-green"><b style="font-size: 2rem">A</b></button>
+                                    <button onclick="Clasificar('B', 3)" style="height: 70px;width: 70px" class="button cycle-button fg-orange"><b style="font-size: 2rem">B</b></button>
+                                    <button onclick="Clasificar('C', 3)" style="height: 70px;width: 70px" class="button cycle-button fg-amber"><b style="font-size: 2rem">C</b></button>
+                                    <button onclick="Clasificar('D', 3)" style="height: 70px;width: 70px" class="button cycle-button fg-red"><b style="font-size: 2rem">D</b></button>
+                                    <button onclick="Clasificar('R', 3)" style="height: 70px;width: 70px" class="button cycle-button"><b style="font-size: 2rem">R</b></button>
+                                </td>
+                                <td class="center">
+                                    <button class="command-button bg-red fg-white" onclick="NotificacionE()">
+                                        <span class="icon mif-cancel"></span>
+                                        Nota de error
+                                        <small>El producto no se encuentra</small>
                                     </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-cyan"></button><br>Cyan</td>
-                                <td class="center">10</td>
+                                <td class="center"><img src="imagenes/Mingitorios.png" width="100px" height="100px"><br>Migitorio</td>
+                                <td class="center"><button class="button cycle-button bg-darkTeal" style="height: 80px;width: 80px"></button><br>Teal</td>
                                 <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
+                                    <button onclick="Clasificar('A', 4)" style="height: 70px;width: 70px" class="button cycle-button fg-green"><b style="font-size: 2rem">A</b></button>
+                                    <button onclick="Clasificar('B', 4)" style="height: 70px;width: 70px" class="button cycle-button fg-orange"><b style="font-size: 2rem">B</b></button>
+                                    <button onclick="Clasificar('C', 4)" style="height: 70px;width: 70px" class="button cycle-button fg-amber"><b style="font-size: 2rem">C</b></button>
+                                    <button onclick="Clasificar('D', 4)" style="height: 70px;width: 70px" class="button cycle-button fg-red"><b style="font-size: 2rem">D</b></button>
+                                    <button onclick="Clasificar('R', 4)" style="height: 70px;width: 70px" class="button cycle-button"><b style="font-size: 2rem">R</b></button>
+                                </td>
+                                <td class="center">
+                                    <button class="command-button bg-red fg-white" onclick="NotificacionE()">
+                                        <span class="icon mif-cancel"></span>
+                                        Nota de error
+                                        <small>El producto no se encuentra</small>
                                     </button>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-brown"></button><br>Brown</td>
-                                <td class="center">10</td>
+                                <td class="center"><img src="imagenes/Lavabos.png" width="100px" height="100px"><br>Lavabo</td>
+                                <td class="center"><button class="button cycle-button bg-brown" style="height: 80px;width: 80px"></button><br>Brown</td>
                                 <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
-                                    </button>
+                                    <button onclick="Clasificar('A', 5)" style="height: 70px;width: 70px" class="button cycle-button fg-green"><b style="font-size: 2rem">A</b></button>
+                                    <button onclick="Clasificar('B', 5)" style="height: 70px;width: 70px" class="button cycle-button fg-orange"><b style="font-size: 2rem">B</b></button>
+                                    <button onclick="Clasificar('C', 5)" style="height: 70px;width: 70px" class="button cycle-button fg-amber"><b style="font-size: 2rem">C</b></button>
+                                    <button onclick="Clasificar('D', 5)" style="height: 70px;width: 70px" class="button cycle-button fg-red"><b style="font-size: 2rem">D</b></button>
+                                    <button onclick="Clasificar('R', 5)" style="height: 70px;width: 70px" class="button cycle-button"><b style="font-size: 2rem">R</b></button>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-green"></button><br>Green</td>
-                                <td class="center">10</td>
                                 <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-magenta"></button><br>Magenta</td>
-                                <td class="center">10</td>
-                                <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-darkCrimson"></button><br>Crimson</td>
-                                <td class="center">10</td>
-                                <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-teal"></button><br>Teal</td>
-                                <td class="center">10</td>
-                                <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-olive"></button><br>Olive</td>
-                                <td class="center">10</td>
-                                <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="center">Partenón</td>
-                                <td class="center">Lavabo</td>
-                                <td class="center"><button class="button cycle-button bg-Violet"></button><br>Violet</td>
-                                <td class="center">10</td>
-                                <td class="center">
-                                    <button class="shortcut-button bg-darkCobalt bg-active-darkBlue fg-white rounded block-shadow-info text-shadow" onclick="AbrirVentana()">
-                                        <span class="icon mif-pencil"></span>
-                                        <span class="title">Corregir</span>
+                                    <button class="command-button bg-red fg-white" onclick="NotificacionE()">
+                                        <span class="icon mif-cancel"></span>
+                                        Nota de error
+                                        <small>El producto no se encuentra</small>
                                     </button>
                                 </td>
                             </tr>
