@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/metro.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
+        <link href="css/metro-icons.min.css" rel="stylesheet">
+        <script src="js/metro.js"></script>
+        <script type="text/javascript">
+           
+            function Info()
+             {
+                 metroDialog.open('#EditarProducto');
+            }
+            $(document).ready(function () {
+                $(".btn-close").click(function () {
+                    metroDialog.close('#EditarProducto');
+                });
+            })
+
+            function Editar()
+            {
+                $("#nom2").fadeIn();
+                $("#formulario").fadeIn();
+                $("#nom1").fadeOut();
+                $("#botones1").fadeOut();
+                $("#botones2").fadeIn();
+            }
+            function Cancelar()
+            {
+                $("#nom2").fadeOut();
+                $("#formulario").fadeOut();
+                $("#nom1").fadeIn();
+                $("#botones1").fadeIn();
+                $("#botones2").fadeOut();
+            }
+            function NuevoModelo()
+            {
+                $("#AgregarModelo").fadeOut();
+                $("#VerModelos").fadeIn();
+
+            }
+            function BotonGuardar()
+            {
+                $("#BotonG").fadeIn();
+            }
+            function Mensaje()
+            {
+                $.Notify({
+                    caption: 'Correcto',
+                    content: 'La información ha sido guardada con éxito',
+                    type: 'success'
+                });
+            }
+            function Nuevo()
+            {
+                $("#newProd1").fadeIn();
+                $("#newProd2").fadeIn();
+                $("#newProd3").fadeIn();
+                $("#nuevoProd1").fadeOut();
+            }
+         
+        </script>
+        <title>Royalty Ceramic/Administración</title>
+    </head>
+    <body>
+<div class="app-bar" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
+            <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
+
+            <ul class="app-bar-menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Contacto</a></li>
+                <ul class="app-bar-menu">
+                    <li><a href="">Soporte</a></li>
+                    <li>
+                        <a href="" class="dropdown-toggle">Productos</a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Línea Residencial</a></li>
+                            <li><a href="">Línea Comercial</a></li>
+                            <li><a href="">Lavabos</a></li>
+                            <li><a href="">Mingitorios</a></li>
+                            <li class="divider"></li>
+                            <li><a href="" class="dropdown-toggle">Otros productos</a>
+                                <ul class="d-menu" data-role="dropdown">
+                                    <li><a href="">Accesorios</a></li>
+                                    <li><a href="">Producto especial 2</a></li>
+                                    <li><a href="">Producto especial 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </ul>
+            <div class="app-bar-element place-right">
+                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;Paola Carrillo</a>
+                <div class="app-bar-drop-container bg-white fg-dark place-right"
+                     data-role="dropdown" data-no-close="true">
+                    <div class="padding10" style="width: 200px;">
+                        <center>
+                            <img src="img/user.png" style="width: 100px;">
+                            <br>
+                            <b>Paola Carrillo López</b><br>
+                            Administración del Sistema
+                            <i>Administrador</i>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
+            <h1>EDICIÓN DE PRODUCTOS</h1><br>
+                <div>
+                <table class="table striped" id="resultados" >
+                    <thead>
+                        <tr>
+                        <th style="text-align: center; width: 30%">Productos</th>
+                        <th style="text-align: center; width: 30%">Imagenes</th>
+                        <th style="text-align: center; width: 40%">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center"><div id="nom1">Tazas</div><div id="nom2" style="display: none" class="input-control text"><input type="text" placeholder="Teclea el nombre"></div></td>
+                            <td rowspan=1 style="text-align: center; width: 30%">
+                            <img name='foto' id='foto' class='foto'
+                            src="imagenes/Tazas.png"
+                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                            border: #ABABAB 3px solid;
+                            border-top-left-radius: 20px;
+                            border-bottom-right-radius: 20px; "/>
+                            <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
+                            <input name="uploadedfile" type="file" />
+                            <input type="submit" value="Cambiar imagen" />
+                            </form>
+                            </td>
+                            <td class="center"><div id="botones1"><button class="button info" onclick="Info()">Ver modelos  <span class="mif-list"></span></button>
+                            <button class="button primary" onclick="Editar()">Editar  <span class="mif-pencil"></span></button>
+                            <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></div>
+                            <div id="botones2" style="display: none"><button class="button success" onclick="Guardar()">Guardar</button>
+                            <button class="button danger" onclick="Cancelar()">Cancelar</button></div></td>
+                        </tr>
+                        <tr>
+                        <td class="center">Lavabos</td>
+                        <td rowspan=1 style="text-align: center; width: 30%">
+                            <img name='foto' id='foto' class='foto'
+                            src="imagenes/Lavabos.png"
+                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                            border: #ABABAB 3px solid;
+                            border-top-left-radius: 20px;
+                            border-bottom-right-radius: 20px; "/>
+                            <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
+                            <input name="uploadedfile" type="file" />
+                            <input type="submit" value="Cambiar imagen" />
+                            </form>
+                            </td>
+                        <td class="center"><button class="button info" onclick="Info()">Ver modelos  <span class="mif-list"></span></button>
+                        <button class="button primary">Editar  <span class="mif-pencil"></span></button>
+                        <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td class="center">Tanques</td>
+                            <td rowspan=1 style="text-align: center; width: 30%">
+                            <img name='foto' id='foto' class='foto'
+                            src="imagenes/Tanques.png"
+                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                            border: #ABABAB 3px solid;
+                            border-top-left-radius: 20px;
+                            border-bottom-right-radius: 20px; "/>
+                            <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
+                            <input name="uploadedfile" type="file" />
+                            <input type="submit" value="Cambiar imagen" />
+                            </form>
+                            </td>
+                            <td class="center"><button class="button info" onclick="Info()">Ver modelos  <span class="mif-list"></span></button>
+                            <button class="button primary">Editar  <span class="mif-pencil"></span></button>
+                            <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td class="center">Pedestales</td>
+                            <td rowspan=1 style="text-align: center; width: 30%">
+                            <img name='foto' id='foto' class='foto'
+                            src="imagenes/Pedestales.png"
+                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                            border: #ABABAB 3px solid;
+                            border-top-left-radius: 20px;
+                            border-bottom-right-radius: 20px; "/>
+                            <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
+                            <input name="uploadedfile" type="file" />
+                            <input type="submit" value="Cambiar imagen" />
+                            </form>
+                            </td>
+                            <td class="center"><button class="button info" onclick="Info()">Ver modelos  <span class="mif-list"></span></button>
+                            <button class="button primary">Editar  <span class="mif-pencil"></span></button>
+                            <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td class="center">Mingitorios</td>
+                            <td rowspan=1 style="text-align: center; width: 30%">
+                            <img name='foto' id='foto' class='foto'
+                            src="imagenes/Mingitorios.png"
+                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                            border: #ABABAB 3px solid;
+                            border-top-left-radius: 20px;
+                            border-bottom-right-radius: 20px; "/>
+                            <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
+                            <input name="uploadedfile" type="file" />
+                            <input type="submit" value="Cambiar imagen" />
+                            </form>
+                            </td>
+                            <td class="center"><button class="button info" onclick="Info()">Ver modelos  <span class="mif-list"></span></button>
+                            <button class="button primary">Editar  <span class="mif-pencil"></span></button>
+                            <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td class="center">Accesorios</td>
+                            <td rowspan=1 style="text-align: center; width: 30%">
+                            <img name='foto' id='foto' class='foto'
+                            src="imagenes/Accesorios.jpg"
+                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                            border: #ABABAB 3px solid;
+                            border-top-left-radius: 20px;
+                            border-bottom-right-radius: 20px; "/>
+                            <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
+                            <input name="uploadedfile" type="file" />
+                            <input type="submit" value="Cambiar imagen" />
+                            </form>
+                            </td>
+                            <td class="center"><button class="button info" onclick="Info()">Ver modelos  <span class="mif-list"></span></button>
+                            <button class="button primary">Editar  <span class="mif-pencil"></span></button>
+                            <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></td>
+                        </tr>
+                        <tr><div >
+                            <td id="nuevoProd1" colspan="3" class="center">
+                            <button class="button success" onclick="Nuevo()">Nuevo</button>
+                            <button class="button danger">Cancelar</button></td>
+                            </div>
+                            <div>
+                            <td id="newProd1" style="display: none" class="center"><div id=""  class="input-control text"><input type="text" placeholder="Teclea el nombre"></div></td>
+                            <td id="newProd2" style="display: none" rowspan=1 style="text-align: center; width: 30%">
+                            <img name='foto' id='foto' class='foto'
+                            src="img/imagen.png"
+                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                            border: #ABABAB 3px solid;
+                            border-top-left-radius: 20px;
+                            border-bottom-right-radius: 20px;"/>
+                            <form enctype="multipart/form-data" action="uploader.php" method="POST">
+                            <input name="uploadedfile" type="file" />
+                            <input type="submit" value="Cambiar imagen" />
+                            </form>
+                            </td>
+                            <td id="newProd3" style="display: none" class="center">
+                            <div id=""><button class="button success" onclick="">Guardar</button>
+                            <button class="button danger" onclick="">Cancelar</button></div></td>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div id="EditarProducto" data-role="dialog" class="dialog"  data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true" data-width="450" data-height="450" style="overflow: scroll;">
+                    <div class="window success">
+                    <div class="window-caption">
+                        <span class="window-caption-icon"><span class="mif-windows"></span></span>
+                        <span class="window-caption-title">Editar Producto</span>
+                        <span class="btn-close"></span>
+                    </div>
+                    <div class="window-content" data-height="550">
+                    <br><h4>Tazas</h4><br>
+                    <table class="table striped">
+                    <thead><tr><th colspan="2">Modelos</th></tr></thead>
+                    <tbody>
+                    <tr><td>Dinastía</td>
+                    <td><button class="button danger"><span class="mif-cancel"></span></button></td></tr>
+                    <tr><td>Emporio</td>
+                    <td><button class="button danger"><span class="mif-cancel"></span></button></td></tr>
+                    <tr><td>Partenón</td>
+                    <td><button class="button danger"><span class="mif-cancel"></span></button></td></tr>
+                    <tr><td>Flux</td>
+                    <td><button class="button danger"><span class="mif-cancel"></span></button></td></tr>
+                    <tr><td>One piece infantil</td>
+                    <td><button class="button danger"><span class="mif-cancel"></span></button></td></tr>
+                    <tr><td>
+                    <div class="input-control text" id="AgregarModelo">
+                    <button class="button success" onclick="NuevoModelo()">Agregar Modelo</button></div>
+                    <div id="VerModelos" class="input-control select" style="display: none">
+                    Selecciona un modelo:
+                        <select onchange="BotonGuardar()">
+                        <option>One piece Element</option>
+                        <option>City</option>
+                        </select>
+                    </div></td>
+                    <td><div id="BotonG" style="display: none">
+                        <button class="button success" onclick="Mensaje()"><span class="mif-checkmark"></span></button><br></td>
+                    </div>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                </div>
+        </div>
+   </body>
+</html>
+
+
