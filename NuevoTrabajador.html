@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/metro.css" rel="stylesheet">
+        <link href="css/metro-responsive.min.css" rel="stylesheet">
+        <link href="css/metro-schemes.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
+        <link href="css/metro-icons.min.css" rel="stylesheet">
+        <script src="js/metro.js"></script>
+        <script>
+
+            function Notificacion()
+            {
+                $.Notify({
+                    caption: 'Correcto',
+                    content: 'La salida de mercancía fue guardada con éxito',
+                    type: 'success'
+                });
+            }
+            function CrearUsuario()
+            {
+                $("#conteni").fadeOut();
+                $("#usuarionuevo").fadeIn();
+            }
+            function OtroUsuario()
+            {
+                $("#conteni").fadeIn();
+                $("#usuarionuevo").fadeOut();
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="app-bar fixed-top" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
+            <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
+
+            <ul class="app-bar-menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Contacto</a></li>
+                <ul class="app-bar-menu">
+                    <li><a href="">Soporte</a></li>
+                    <li>
+                        <a href="" class="dropdown-toggle">Productos</a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Línea Residencial</a></li>
+                            <li><a href="">Línea Comercial</a></li>
+                            <li><a href="">Lavabos</a></li>
+                            <li><a href="">Mingitorios</a></li>
+                            <li class="divider"></li>
+                            <li><a href="" class="dropdown-toggle">Otros productos</a>
+                                <ul class="d-menu" data-role="dropdown">
+                                    <li><a href="">Accesorios</a></li>
+                                    <li><a href="">Producto especial 2</a></li>
+                                    <li><a href="">Producto especial 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </ul>
+            <div class="app-bar-element place-right">
+                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;David Fernandez</a>
+                <div class="app-bar-drop-container bg-white fg-dark place-right"
+                     data-role="dropdown" data-no-close="true">
+                    <div class="padding10" style="width: 200px;">
+                        <center>
+                            <img src="img/user.png" style="width: 100px;">
+                            <br>
+                            <b>David Fernandez</b><br>
+                            Planta de producción
+                            <i>Administrador</i>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
+            <br><br><br>
+            <h1>
+                <div class="dropdown-button">
+                    <button class="button dropdown-toggle large-button fg-darkCrimson" style="size: "> <span class="mif-link"></span></button>
+                    <ul class="split-content d-menu" data-role="dropdown" style="border-color:white">
+                        <li><a href="#">Captura Carro</a></li>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Reportes</a></li>
+                    </ul>
+                </div>
+                Crear nuevo empleado</h1><br>
+            <center id="usuarionuevo" style="display: none" class="block-shadow-success">
+                <h4 class="example">El usuario se creó correctamente<br></h4><br><b class='text-shadow'>Usuario: jfloresr34 <br><br>Contraseña: #reasd8320<br><br>Área: Almacenista<br><br></b>
+                <br><br><button class="button primary block-shadow-info text-shadow" onclick="OtroUsuario()"><span class="mif-floppy-disk"></span> Crear otro empleado</button><br><br>
+            </center>
+            <center id="conteni">
+                <div class="grid example">
+                    <h4><u>Información personal</u></h4>
+                    <div class="row cells3 ">
+                        <div class="cell">
+                            <label>Nombre(s)</label>
+                            <div class="input-control text full-size">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <label>Apellido materno</label>
+                            <div class="input-control text full-size">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <label>Apellido paterno</label>
+                            <div class="input-control text full-size">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row cells3">
+                        <div class="cell">
+                            <label>Fecha de nacimiento</label>
+                            <div class="input-control text full-size" data-role="datepicker">
+                                <input type="text">
+                                <button class="button"><span class="mif-calendar"></span></button>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <label>Género</label><br>
+                            <label class="input-control radio">
+                                <input type="radio" name="genero">
+                                <span class="check"></span>
+                                <span class="caption">F</span>
+                            </label>
+                            <label class="input-control radio ">
+                                <input type="radio" name="genero">
+                                <span class="check"></span>
+                                <span class="caption">M</span>
+                            </label>
+                        </div>
+                        <div class="cell">
+                            <label>CURP</label>
+                            <div class="input-control text full-size">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid example">
+                    <h4><u>Dirección</u></h4>
+                    <div class="row cells4 example">
+                        <div class="cell">
+                            <label>Calle</label>
+                            <div class="input-control text full-size">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <label>Número</label>
+                            <div class="input-control text full-size">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <label>Colonia</label>
+                            <div class="input-control text full-size">
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <label>Código postal</label>
+                            <div class="input-control text full-size">
+                                <input type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="button success block-shadow-success text-shadow" onclick="CrearUsuario()"><span class="mif-floppy-disk"></span> Guardar información</button>
+            </center>
+        </div>
+    </body>
+</html>
