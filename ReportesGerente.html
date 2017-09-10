@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="css/metro.css" rel="stylesheet">
+        <link href="css/metro-responsive.min.css" rel="stylesheet">
+        <link href="css/metro-schemes.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
+        <link href="css/metro-icons.min.css" rel="stylesheet">
+        <script src="js/metro.js"></script>
+        <script>
+            function grafica(min, max) {
+                return Math.round(Math.random() * (max - min) + min);
+            }
+            function Consultar()
+            {
+                $("#respuesta").fadeIn();
+                var graf = grafica(1, 5);
+                $("#grafica").html("<img src='graficas/" + graf + ".jpg' width='500px' height='300px'>");
+            }
+        </script>
+    </head>
+    <body>
+
+        <div class="app-bar fixed-top" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
+            <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
+
+            <ul class="app-bar-menu">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Contacto</a></li>
+                <ul class="app-bar-menu">
+                    <li><a href="">Soporte</a></li>
+                    <li>
+                        <a href="" class="dropdown-toggle">Productos</a>
+                        <ul class="d-menu" data-role="dropdown">
+                            <li><a href="">Línea Residencial</a></li>
+                            <li><a href="">Línea Comercial</a></li>
+                            <li><a href="">Lavabos</a></li>
+                            <li><a href="">Mingitorios</a></li>
+                            <li class="divider"></li>
+                            <li><a href="" class="dropdown-toggle">Otros productos</a>
+                                <ul class="d-menu" data-role="dropdown">
+                                    <li><a href="">Accesorios</a></li>
+                                    <li><a href="">Producto especial 2</a></li>
+                                    <li><a href="">Producto especial 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </ul>
+            <div class="app-bar-element place-right">
+                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;David Fernandez</a>
+                <div class="app-bar-drop-container bg-white fg-dark place-right"
+                     data-role="dropdown" data-no-close="true">
+                    <div class="padding10" style="width: 200px;">
+                        <center>
+                            <img src="img/user.png" style="width: 100px;">
+                            <br>
+                            <b>Alberto Ortega</b><br>
+                            Planta de producción
+                            <i>Gerente</i>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
+            <br><br><br>
+            <h1>
+                <div class="dropdown-button">
+                    <button class="button dropdown-toggle large-button fg-darkCrimson" style="size: "> <span class="mif-link"></span></button>
+                    <ul class="split-content d-menu" data-role="dropdown" style="border-color:white">
+                        <li><a href="#">Captura Carro</a></li>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Reportes</a></li>
+                    </ul>
+                </div>
+                Generador de reportes</h1><br>
+            <center id="contenido" class=" example">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width:550px ">Fecha(s)</th>
+                            <th>Calidad</th>
+                            <th>Modelo</th>
+                            <th>Producto</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>Inicio: <div class="input-control text" style="height:80px;font-size: x-large" data-role="datepicker">
+                                <input type="text">
+                                <button class="button" style="height: 80px"><span class="mif-calendar"></span></button>
+                            </div>
+                            Fin:    <div class="input-control text" style="height:80px;font-size: x-large" data-role="datepicker">
+                                <input type="text">
+                                <button class="button" style="height: 80px"><span class="mif-calendar" ></span></button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-control select" style="height: 80px;font-size: larger;width: 80px">
+                                <select style="padding-left: 40%">
+                                    <option class="fg-darkGreen">A</option>
+                                    <option class="fg-darkOrange">B</option>
+                                    <option class="fg-orange">C</option>
+                                    <option class="fg-yellow">D</option>
+                                    <option class="fg-red">R</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-control select" style="height: 80px;font-size: larger;width: 180px">
+                                <select style="padding-left: 20%">
+                                    <option class="fg-green">DINASTÍA</option>
+                                    <option class="fg-darkOrange">EMPORIO</option>
+                                    <option class="fg-darkMagenta">PARTENÓN</option>
+                                    <option class="fg-darkTeal">FLUX</option>
+                                    <option>ONE PIECE</option>
+                                    <option class="fg-darkCobalt">ELEMENT</option>
+                                    <option class="fg-darkGray">CITY</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-control select" style="height: 80px;font-size: larger;width: 180px">
+                                <select style="padding-left: 20%">
+                                    <option>TAZAS</option>
+                                    <option>LAVABOS</option>
+                                    <option>TANQUES</option>
+                                    <option>PEDESTALES</option>
+                                    <option>MINGITORIOS</option>
+                                    <option>ACCESORIOS</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <button class="button large-button text-shadow block-shadow-success success" onclick="Consultar()">Consultar</button>
+                        </td>
+                    </tr>
+                </table><br><hr><br>
+                <div class="grid" id="respuesta" style="display:none">
+                    <div class="row cells2">
+                        <div class="cell">
+                            <div id="grafica"></div>
+                        </div>
+                        <div class="cell">
+                            <table class="table" >
+                                <thead>
+                                    <tr>
+                                        <td>Fecha</td>
+                                        <td>Calidad</td>
+                                        <td>Modelo</td>
+                                        <td>Producto</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>17-09-17</td>
+                                        <td>A</td>
+                                        <td>Partenón</td>
+                                        <td>Taza</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10-05-17</td>
+                                        <td>B</td>
+                                        <td>Emporio</td>
+                                        <td>Lavabo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11-08-17</td>
+                                        <td>R</td>
+                                        <td>Emporio</td>
+                                        <td>Pedestal</td>
+                                    </tr>
+                                </tbody>
+                            </table><br><br>
+                        </div>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </body>
+</html>
