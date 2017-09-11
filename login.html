@@ -25,21 +25,21 @@
         <script>
             function Iniciar()
             {
-                var pagina = $("#user_login").val();
-                if(pagina="1"){
+                var pagina = $("#pag").val();
+                if (pagina == "1") {
                     window.location = "panelGerencia.html";
-                }else if(pagina="2"){
+                } else if (pagina == "2") {
                     window.location = "Reportes.html";
-                }else if(pagina="3"){
+                } else if (pagina == "3") {
                     window.location = "panelCapturista.html";
-                }else if(pagina="4"){
+                } else if (pagina == "4") {
                     window.location = "panelClasificacion.html";
-                }else if(pagina="5"){
+                } else if (pagina == "5") {
                     window.location = "panelAlmacenista.html";
-                }else if(pagina="6"){
+                } else if (pagina == "6") {
                     window.location = "panelCEDIS.html";
-                }else{
-                    window.location="login.html"
+                } else {
+                    window.location = "login.html"
                 }
             }
         </script>
@@ -52,7 +52,7 @@
                 <div class="input-control select full-size" data-role="select" id="user_login">
                     <label >Usuario:</label>
                     <!--<input type="text" name="user_login" id="user_login" style="padding-right: 36px;">-->
-                    <select >
+                    <select id="pag">
                         <option value="1">Gerencia</option>
                         <option value="2">Administración</option>
                         <option value="3">Capturista</option>
