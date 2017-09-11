@@ -13,7 +13,7 @@
             {
                 $.Notify({
                     caption: 'Correcto',
-                    content: 'La salida de mercancía fue guardada con éxito',
+                    content: 'La salida de mercancÃ­a fue guardada con Ã©xito',
                     type: 'success'
                 });
             }
@@ -21,7 +21,7 @@
             {
                 $.Notify({
                     caption: 'Cancelado',
-                    content: 'Se canceló la salida de mercancía',
+                    content: 'Se cancelÃ³ la salida de mercancÃ­a',
                     type: 'alert'
                 });
                 $("#Tabla").fadeOut();
@@ -48,8 +48,8 @@
                     <li>
                         <a href="" class="dropdown-toggle">Productos</a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">Línea Residencial</a></li>
-                            <li><a href="">Línea Comercial</a></li>
+                            <li><a href="">LÃ­nea Residencial</a></li>
+                            <li><a href="">LÃ­nea Comercial</a></li>
                             <li><a href="">Lavabos</a></li>
                             <li><a href="">Mingitorios</a></li>
                             <li class="divider"></li>
@@ -67,16 +67,16 @@
                 </ul>
             </ul>
             <div class="app-bar-element place-right">
-                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;Juan Herrera</a>
+                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;Pedro Fuentes</a>
                 <div class="app-bar-drop-container bg-white fg-dark place-right"
                      data-role="dropdown" data-no-close="true">
                     <div class="padding10" style="width: 200px;">
                         <center>
                             <img src="img/user.png" style="width: 100px;">
                             <br>
-                            <b>Juan Herrera</b><br>
-                            Centro de distribución
-                            <i>Almacenista CEDIS</i>
+                            <b>Pedro Fuentes LÃ³pez</b><br>
+                            AlmacÃ©n<br>
+                            <i>Almacenista</i>
                         </center>
                     </div>
                 </div>
@@ -88,46 +88,60 @@
                 <div class="dropdown-button">
                     <button class="button dropdown-toggle large-button fg-darkCrimson" style="size: "> <span class="mif-link"></span></button>
                     <ul class="split-content d-menu" data-role="dropdown" style="border-color:white">
-                        <li><a href="panelCEDIS.html">Volver</a></li>
+                        <li><a href="recibirAlmacen.html">Recibir Productos</a></li>
+                        <li><a href="SalidaAlmacen.html">Salida de Productos</a></li>
+                        <li><a href="capturaAccidenteA.html">Captura de accidentes</a></li>
+                        <li><a href="">Reportes por fecha</a></li>
+                        <li><a href="">Reportes de accidentes</a></li>
                     </ul>
                 </div>
-                Salida de mercancía de Centro de Distribución</h1><br>
+                Panel de control</h1><br>
             <center>
-
-
-                <div id="Inicio">
-                    <div class="input-control text big-input full-size">
-                        <input type="text" id="claveprod" placeholder="Ingrese el código de barras" onkeyup="MostrarProd()">
-                        <button class="button"><span class="mif-search"></span></button></div></div>
-                <div id="Tabla" style="display: none">
-                    <table class="table  hovered border bordered">
-                        <thead class="center">
-                            <tr>
-                                <th colspan="6" style="text-align: center">PRODUCTO: 435BC</th>
-                            </tr>
-                            <tr>
-                                <th style="text-align: center">Producto</th>
-                                <th style="text-align: center">Modelo</th>
-                                <th style="text-align: center">Color</th>
-                                <th style="text-align: center">Fecha de vaciado</th>
-                                <th style="text-align: center">Clasificación</th>
-                                <th style="text-align: center">Fecha de clasificación</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="center"><img src="imagenes/Tazas.png" width="100px" height="100px"><br>Taza</td>
-                                <td class="center">Partenón</td>
-                                <td class="center"><button class="button cycle-button bg-gray" style="height: 80px;width: 80px"></button><br>Gray</td>
-                                <td class="center">19-08-2017</td>
-                                <td class="center">A</td>
-                                <td class="center">20-08-2017</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div align="right">
-                        <button class="button danger" style="height: 50px" onclick="NotificacionE()"><span class="icon mif-cancel"></span> Cancelar</button>
-                        <button class="button success" style="height: 50px" onclick="Notificacion()"><span class="icon mif-floppy-disk"></span> Confirmar Salida</button>
+                <div class="panel">
+                    <div class="heading bg-lightGray " >
+                        <span class="icon mif-home bg-darkGray "></span>
+                        <span class="title fg-black">AlmacÃ©n</span>
+                    </div>
+                    <div class="content">
+                        <br><br>
+                        <button class="command-button icon-left bg-gray fg-white" onclick="window.location = 'recibirAlmacen.html'">
+                            <span class="icon mif-arrow-right"></span>
+                            Recibir
+                            <small>Productos entrantes</small>
+                        </button>
+                        <button class="command-button icon-left success" onclick="window.location = 'SalidaAlmacen.html'">
+                            <span class="icon mif-arrow-left"></span>
+                            Salida
+                            <small> de productos del almacÃ©n</small>
+                        </button>
+                        <button class="command-button icon-left primary" onclick="window.location = 'capturaAccidenteA.html'">
+                            <span class="icon mif-warning"></span>
+                            Accidentes
+                            <small>Capturar accidentes</small>
+                        </button>
+                        <br><br>
+                        <br><br>
+                    </div>
+                </div>
+                <br><br>
+                <div class="panel">
+                    <div class="heading primary bg-lightGray" >
+                        <span class="icon mif-chart-line bg-darkGray"></span>
+                        <span class="title fg-black">Reportes</span>
+                    </div>
+                    <div class="content example ">
+                        <br><br>
+                        <button class="command-button icon-left warning">
+                            <span class="icon mif-calendar"></span>
+                            Reporte
+                            <small>Reporte por fecha</small>
+                        </button>
+                        <button class="command-button icon-left bg-brown fg-white">
+                            <span class="icon mif-warning"></span>
+                            Reporte
+                            <small>Reporte por accidente</small>
+                        </button>
+                        <br><br>
                     </div>
                 </div>
             </center>
