@@ -11,34 +11,34 @@
                 $("#Tabla").fadeIn();
                 $("#Inicio").fadeOut();
             }
-            
+
             function Cancelar()
             {
                 $("#Tabla").fadeOut();
-                 $.Notify({
+                $.Notify({
                     caption: 'Error al guardar',
                     content: 'el producto',
                     type: 'alert'
                 });
-                 $("#Inicio").fadeIn();
+                $("#Inicio").fadeIn();
             }
             function Guardar()
             {
                 $("#Tabla").fadeOut();
-                 $.Notify({
-                    caption: 'Se guardÃ³ correctamente',
+                $.Notify({
+                    caption: 'Se guardó correctamente',
                     content: 'el producto',
                     type: 'success'
                 });
-                 $("#Inicio").fadeIn();
+                $("#Inicio").fadeIn();
             }
-            
-           
+
+
         </script>
         <title>Royalty Ceramic/Almacen</title>
     </head>
     <body>
-<div class="app-bar" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
+        <div class="app-bar" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
             <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
 
             <ul class="app-bar-menu">
@@ -50,8 +50,8 @@
                     <li>
                         <a href="" class="dropdown-toggle">Productos</a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">LÃ­nea Residencial</a></li>
-                            <li><a href="">LÃ­nea Comercial</a></li>
+                            <li><a href="">Línea Residencial</a></li>
+                            <li><a href="">Línea Comercial</a></li>
                             <li><a href="">Lavabos</a></li>
                             <li><a href="">Mingitorios</a></li>
                             <li class="divider"></li>
@@ -76,8 +76,8 @@
                         <center>
                             <img src="img/user.png" style="width: 100px;">
                             <br>
-                            <b>Pedro Fuentes LÃ³pez</b><br>
-                            AlmacÃ©n<br>
+                            <b>Pedro Fuentes López</b><br>
+                            Almacén<br>
                             <i>Almacenista</i>
                         </center>
                     </div>
@@ -85,49 +85,58 @@
             </div>
         </div>
         <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
-            <h1>RECIBIR PRODUCTOS ALMACEN</h1><br>
+            <h1>
+
+                <div class="dropdown-button">
+                    <button class="button dropdown-toggle large-button fg-darkCrimson" style="size: "> <span class="mif-link"></span></button>
+                    <ul class="split-content d-menu" data-role="dropdown" style="border-color:white">
+                        <li><a href="panelalmacenista.html">Panel General</a></li>
+                        <li><a href="CapturaAccidenteA.html">Captura accidente</a></li>
+                        <li><a href="SalidaAlmacen.html">Salida almacén</a></li>
+                    </ul>
+                </div> RECIBIR PRODUCTOS ALMACEN</h1><br>
             <h2><center>Ingresar Datos</center></h2><br>
-                <div id="Inicio">
-                <strong><h3>CÃ³digo de barras:</h3></strong>
+            <div id="Inicio">
+                <strong><h3>Código de barras:</h3></strong>
                 <div class="input-control text big-input full-size">
-                    <input type="text" id="cveCarro" placeholder="Ingrese el cÃ³digo de barras" onkeyup="MostrarProd()">
+                    <input type="text" id="cveCarro" placeholder="Ingrese el código de barras" onkeyup="MostrarProd()">
                     <button class="button"><span class="mif-search"></span></button></div></div>
-                <div id="Tabla" style="display: none">
-                    <table class="table  hovered border bordered">
-                        <thead class="center">
-                            <tr>
-                                <th colspan="6" style="text-align: center">PRODUCTO "CÃ³digo de barras"</th>
-                            </tr>
-                            <tr>
-                                <th style="text-align: center">Producto</th>
-                                <th style="text-align: center">Modelo</th>
-                                <th style="text-align: center">Color</th>
-                                <th style="text-align: center">Fecha de vacio</th>
-                                <th style="text-align: center">ClasificaciÃ³n</th>
-                                <th style="text-align: center">Fecha de clasificaciÃ³n</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="center">Taza</td>
-                                <td class="center">DinastÃ­a</td>
-                                <td class="center">Blanco</td>
-                                <td class="center">11-09-2017</td>
-                                <td class="center">A</td>
-                                <td class="center">11-09-2017</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div align="right">
+            <div id="Tabla" style="display: none">
+                <table class="table  hovered border bordered">
+                    <thead class="center">
+                        <tr>
+                            <th colspan="6" style="text-align: center">PRODUCTO "Código de barras"</th>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center">Producto</th>
+                            <th style="text-align: center">Modelo</th>
+                            <th style="text-align: center">Color</th>
+                            <th style="text-align: center">Fecha de vacio</th>
+                            <th style="text-align: center">Clasificación</th>
+                            <th style="text-align: center">Fecha de clasificación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center">Taza</td>
+                            <td class="center">Dinastía</td>
+                            <td class="center">Blanco</td>
+                            <td class="center">11-09-2017</td>
+                            <td class="center">A</td>
+                            <td class="center">11-09-2017</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div align="right">
                     <div class="input-control text big-input medium-size">
-                    <button class="button danger" onclick="Cancelar()">Cancelar </button></div>
+                        <button class="button danger" onclick="Cancelar()">Cancelar </button></div>
                     <div class="input-control text big-input medium-size">
-                    <button class="button success" onclick="Guardar()">Guardar  <span class="icon mif-floppy-disk"></span></button></div>
-                    </div>
+                        <button class="button success" onclick="Guardar()">Guardar  <span class="icon mif-floppy-disk"></span></button></div>
                 </div>
-                </div>
+            </div>
         </div>
-   </body>
+    </div>
+</body>
 </html>
 
 

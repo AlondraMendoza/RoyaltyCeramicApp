@@ -90,7 +90,7 @@
             function CapturarVaciador(boton)
             {
                 var mensaje = "La clasificación ha sido guardada con éxito";
-                var texto = "<div class='input-control text full-size big-input' ><input type='text' placeholder='Teclea el nombre del vaciador'></div><br><button class='success button large-button' onclick='Notificacion()'>Guardar</button>";
+                var texto = "<div class='input-control text full-size big-input' ><input type='text' placeholder='Teclea la clave del vaciador'></div><br><button class='success button large-button' onclick='Notificacion()'>Guardar</button>";
                 $("#boton" + boton).html(texto);
             }
         </script>
@@ -199,7 +199,7 @@
                             <br>
                             <b>Karla Pérez López</b><br>
                             Planta de producción
-                            <i>Capturista de hornero</i>
+                            <i>Clasificación</i>
                         </center>
                     </div>
                 </div>
@@ -211,12 +211,10 @@
                 <div class="dropdown-button">
                     <button class="button dropdown-toggle large-button fg-darkCrimson" style="size: "> <span class="mif-link"></span></button>
                     <ul class="split-content d-menu" data-role="dropdown" style="border-color:white">
-                        <li><a href="#">Captura Carro</a></li>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Reportes</a></li>
+                        <li><a href="panelclasificacion.html">Panel General</a></li>
                     </ul>
                 </div>
-                Búsqueda de carro</h1><br>
+                BÚSQUEDA DE CARRO</h1><br>
             <center>
                 <div class="input-control text big-input full-size">
                     <input type="text" placeholder="Ingrese el código de barras del carro" onkeyup="MostrarInfoCarro()">

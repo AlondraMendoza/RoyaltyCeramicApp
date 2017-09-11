@@ -12,7 +12,7 @@
                 $("#MostrarProd").fadeOut();
                 $("#NomProd").fadeIn();
             }
-             function AbrirProd2()
+            function AbrirProd2()
             {
                 $("#ModeloProd2").fadeIn();
                 $("#MostrarProd").fadeOut();
@@ -72,23 +72,23 @@
             function Guardar()
             {
                 $("#Tabla").fadeOut();
-                 metroDialog.open('#VentanaGuardar');
+                metroDialog.open('#VentanaGuardar');
             }
             $(document).ready(function () {
                 $(".btn-close").click(function () {
                     metroDialog.close('#VentanaGuardar');
                 });
             })
-            $(function()
+            $(function ()
             {
                 $("#datepicker").datepicker();
             });
-           
+
         </script>
         <title>Royalty Ceramic/Capturar</title>
     </head>
     <body>
-<div class="app-bar" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
+        <div class="app-bar" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
             <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
 
             <ul class="app-bar-menu">
@@ -100,8 +100,8 @@
                     <li>
                         <a href="" class="dropdown-toggle">Productos</a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">L√≠nea Residencial</a></li>
-                            <li><a href="">L√≠nea Comercial</a></li>
+                            <li><a href="">LÌnea Residencial</a></li>
+                            <li><a href="">LÌnea Comercial</a></li>
                             <li><a href="">Lavabos</a></li>
                             <li><a href="">Mingitorios</a></li>
                             <li class="divider"></li>
@@ -119,15 +119,15 @@
                 </ul>
             </ul>
             <div class="app-bar-element place-right">
-                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;Karla P√©rez</a>
+                <a class="dropdown-toggle fg-white"> <img src="img/user.png" width="35px;" style="border-radius: 50%"> &nbsp;&nbsp;MarÌa Hernandez</a>
                 <div class="app-bar-drop-container bg-white fg-dark place-right"
                      data-role="dropdown" data-no-close="true">
                     <div class="padding10" style="width: 200px;">
                         <center>
                             <img src="img/user.png" style="width: 100px;">
                             <br>
-                            <b>Karla P√©rez L√≥pez</b><br>
-                            Planta de producci√≥n
+                            <b>MarÌa Hernandez Flores</b><br>
+                            Planta de producciÛn
                             <i>Capturista</i>
                         </center>
                     </div>
@@ -136,189 +136,195 @@
         </div>
         <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
             <h1><!--<span class="mif-ani-hover-horizontal mif-ani-fast mif-arrow-left fg-black" style="border:2px #000000 solid; border-radius: 50%"></span>--> 
-            CAPTURA DE CARRO</h1><br>
+                <div class="dropdown-button">
+                    <button class="button dropdown-toggle large-button fg-darkCrimson" style="size: "> <span class="mif-link"></span></button>
+                    <ul class="split-content d-menu" data-role="dropdown" style="border-color:white">
+                        <li><a href="panelcapturista.html">Panel General</a></li>
+                    </ul>
+                </div> 
+                CAPTURA DE CARRO</h1><br>
             <h2><center>Ingresar Datos</center></h2><br>
-                <div id="Inicio">
+            <div id="Inicio">
                 <strong><h3>Clave del Carro:</h3></strong>
                 <div class="input-control text big-input full-size">
                     <input type="text" id="cveCarro" placeholder="Teclea la clave del carro"></div>
                 <strong><h3>Producto:</h3></strong></div>
-                <div class="input-control text big-input full-size" id="NomProd" style="display: none">
-                    <input type="text" readonly placeholder="Tazas"></input></div>
-                    <!--Ejemplo de mingitorios-->
-                <div class="input-control text big-input full-size" id="NomProd2" style="display: none">
-                    <input type="text" readonly placeholder="Mingitorios"></input></div>
-                <!--Productos-->
-                <div data-role="group" data-group-type="one-state" id="MostrarProd">
-                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd()">
+            <div class="input-control text big-input full-size" id="NomProd" style="display: none">
+                <input type="text" readonly placeholder="Tazas"></input></div>
+            <!--Ejemplo de mingitorios-->
+            <div class="input-control text big-input full-size" id="NomProd2" style="display: none">
+                <input type="text" readonly placeholder="Mingitorios"></input></div>
+            <!--Productos-->
+            <div data-role="group" data-group-type="one-state" id="MostrarProd">
+                <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd()">
                     <input type="image" src="imagenes/Tazas.png" height="190px;" width="190px;" title="Tazas"/><b>Tazas</b></button>
-                    <button class="button" style="width: 210px; height: 210px;" onclick="AbrirProd()">
+                <button class="button" style="width: 210px; height: 210px;" onclick="AbrirProd()">
                     <input type="image" src="imagenes/Lavabos.png" height="190px;" width="190px;" title="Lavabos"/><b>Lavabos</b></button>
-                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd()">
+                <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd()">
                     <input type="image" src="imagenes/Tanques.png" height="190px;" width="190px;" title="Tanques"/><b>Tanques</b></button>
-                    <button class="button" style="width: 210px; height: 210px;" onclick="AbrirProd()">
+                <button class="button" style="width: 210px; height: 210px;" onclick="AbrirProd()">
                     <input type="image" src="imagenes/Pedestales.png" height="190px;" width="190px;" title="Pedestales"/><b>Pedestales</b></button>
-                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd2()">
+                <button class="button" style='width: 210px; height: 210px;' onclick="AbrirProd2()">
                     <input type="image" src="imagenes/Mingitorios.png" height="190px;" width="190px;" title="Mingitorios"/><b>Mingitorios</b></button>
-                    <button class="button" style="width: 210px; height: 210px;" onclick="AbrirProd()">
+                <button class="button" style="width: 210px; height: 210px;" onclick="AbrirProd()">
                     <input type="image" src="imagenes/Accesorios.jpg" height="190px;" width="190px;" title="Accesorios"/><b>Accesorios</b></button>
-                    <!--<button class="button" style='background:url("imagenes/Tazas.png")no-repeat center; width:200px; height:200px;'>Tazas</button>
-                    <button class="button" style='background:url("imagenes/Lavabos.png")no-repeat center; width:200px; height:200px;'>Lavabos</button>-->
-                </div>
-                 <!--Modelos-->
-                <div data-role="group" data-group-type="one-state" id="ModeloProd" style="display: none">
+                <!--<button class="button" style='background:url("imagenes/Tazas.png")no-repeat center; width:200px; height:200px;'>Tazas</button>
+                <button class="button" style='background:url("imagenes/Lavabos.png")no-repeat center; width:200px; height:200px;'>Lavabos</button>-->
+            </div>
+            <!--Modelos-->
+            <div data-role="group" data-group-type="one-state" id="ModeloProd" style="display: none">
                 <strong><h3>Modelo:</h3></strong>
-                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod()">
-                    <input type="image" src="imagenes/Tazas/Dinastia.png" height="190px;" width="190px;" title="Dinast√≠a"/><b>Dinast√≠a</b></button>
-                    <button class="button" style="width: 210px; height: 210px;" onclick="AbrirMod()">
+                <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod()">
+                    <input type="image" src="imagenes/Tazas/Dinastia.png" height="190px;" width="190px;" title="DinastÌa"/><b>DinastÌa</b></button>
+                <button class="button" style="width: 210px; height: 210px;" onclick="AbrirMod()">
                     <input type="image" src="imagenes/Tazas/Emporio.png" height="190px;" width="190px;" title="Emporio"/><b>Emporio</b></button>
-                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod()">
-                    <input type="image" src="imagenes/Tazas/Partenon.png" height="190px;" width="190px;" title="Parten√≥n"/><b>Parten√≥n</b></button>
-                    <button class="button" style="width: 210px; height: 210px;" onclick="AbrirMod()">
+                <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod()">
+                    <input type="image" src="imagenes/Tazas/Partenon.png" height="190px;" width="190px;" title="PartenÛn"/><b>PartenÛn</b></button>
+                <button class="button" style="width: 210px; height: 210px;" onclick="AbrirMod()">
                     <input type="image" src="imagenes/Tazas/Flux.png" height="190px;" width="190px;" title="Flux"/><b>Flux</b></button>
-                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod()">
+                <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod()">
                     <input type="image" src="imagenes/Tazas/OnePieceInfantil.png" height="190px;" width="190px;" title="One Piece Infantil"/><b>One Piece infantil</b></button>
-                </div>
-                <!--Modelos Mingitorios-->
-                <div data-role="group" data-group-type="one-state" id="ModeloProd2" style="display: none">
+            </div>
+            <!--Modelos Mingitorios-->
+            <div data-role="group" data-group-type="one-state" id="ModeloProd2" style="display: none">
                 <strong><h3>Modelo:</h3></strong>
-                    <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod2()">
-                    <input type="image" src="imagenes/Mingitorios/Baron.png" height="190px;" width="190px;" title="Bar√≥n"/><b>Bar√≥n</b></button>
-                    <button class="button" style="width: 210px; height: 210px;" onclick="AbrirMod2()">
+                <button class="button" style='width: 210px; height: 210px;' onclick="AbrirMod2()">
+                    <input type="image" src="imagenes/Mingitorios/Baron.png" height="190px;" width="190px;" title="BarÛn"/><b>BarÛn</b></button>
+                <button class="button" style="width: 210px; height: 210px;" onclick="AbrirMod2()">
                     <input type="image" src="imagenes/Mingitorios/Grand.png" height="190px;" width="190px;" title="Grand"/><b>Grand (Seco)</b></button>
-                </div>
-                <!--Mostrar modelo seleccionado-->
-                <div id="Eleccion" style="display: none">
+            </div>
+            <!--Mostrar modelo seleccionado-->
+            <div id="Eleccion" style="display: none">
                 <strong><h3>Modelo:</h3></strong>
                 <div class="input-control text big-input full-size">
-                <input type="text" readonly placeholder="Dinast√≠a"></input></div>
-                <div align="center"><input type="image" src="imagenes/Tazas/Dinastia.png" height="190px;" width="190px;" title="Dinast√≠a"/></div>
-                </div>
-                <!--Mostrar modelo seleccionado Mingitorios-->
-                <div id="EleccionM" style="display: none">
+                    <input type="text" readonly placeholder="DinastÌa"></input></div>
+                <div align="center"><input type="image" src="imagenes/Tazas/Dinastia.png" height="190px;" width="190px;" title="DinastÌa"/></div>
+            </div>
+            <!--Mostrar modelo seleccionado Mingitorios-->
+            <div id="EleccionM" style="display: none">
                 <strong><h3>Modelo:</h3></strong>
                 <div class="input-control text big-input full-size">
-                <input type="text" readonly placeholder="Bar√≥n"></input></div>
-                <div align="center"><input type="image" src="imagenes/Mingitorios/Baron.png" height="190px;" width="190px;" title="Bar√≥n"/></div>
-                </div>
-                <!--Colores-->
-                <div data-role="group" data-group-type="one-state" id="ColorProd" style="display: none">
+                    <input type="text" readonly placeholder="BarÛn"></input></div>
+                <div align="center"><input type="image" src="imagenes/Mingitorios/Baron.png" height="190px;" width="190px;" title="BarÛn"/></div>
+            </div>
+            <!--Colores-->
+            <div data-role="group" data-group-type="one-state" id="ColorProd" style="display: none">
                 <strong><h3>Color:</h3></strong>
-                    <button class="button cycle-button" style='background: url("colores/colorBlanco2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorBlanco2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Blanco</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorHueso2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorHueso2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Hueso</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorCoral2.jpg"); width: 90px; height: 90px;'  onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorCoral2.jpg"); width: 90px; height: 90px;'  onclick="AbrirCol()">
                     <b style="color: white">Coral</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorGrisClaro2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorGrisClaro2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Gris Claro</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorMarmoleado2.jpg"); width: 90px; height: 90px;'  onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorMarmoleado2.jpg"); width: 90px; height: 90px;'  onclick="AbrirCol()">
                     <b style="color: white">Marmoleado</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorRosa2.jpg"); width: 90px; height: 90px;'  onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorRosa2.jpg"); width: 90px; height: 90px;'  onclick="AbrirCol()">
                     <b style="color: white">Rosa</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorVerdeCapri2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorVerdeCapri2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Verde Capri</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorAzulUltramar2.jpg"); width: 90px; height: 90px;'  onclick="AbrirCol()"><b style="color: white">Az√∫l Ultramar</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorArena2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorAzulUltramar2.jpg"); width: 90px; height: 90px;'  onclick="AbrirCol()"><b style="color: white">Az√∫l Ultramar</b></button>
+                <button class="button cycle-button" style='background: url("colores/colorArena2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Arena</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorVerdeMar2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorVerdeMar2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Verde Mar</b></button>
-                    <button class="button cycle-button"  style='background: url("colores/colorAzulCielo2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button"  style='background: url("colores/colorAzulCielo2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Az√∫l Cielo</b></button>
-                    <button class="button cycle-button"  style='background: url("colores/colorVerdeJade2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button"  style='background: url("colores/colorVerdeJade2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Verde Jade</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorAzulHolanda2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
+                <button class="button cycle-button" style='background: url("colores/colorAzulHolanda2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol()">
                     <b style="color: white">Az√∫l Holanda</b></button>
-                </div>
-                <!--Colores Mingitorios-->
-                <div data-role="group" data-group-type="one-state" id="ColorProd2" style="display: none">
+            </div>
+            <!--Colores Mingitorios-->
+            <div data-role="group" data-group-type="one-state" id="ColorProd2" style="display: none">
                 <strong><h3>Color:</h3></strong>
-                    <button class="button cycle-button" style='background: url("colores/colorBlanco2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol2()">
+                <button class="button cycle-button" style='background: url("colores/colorBlanco2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol2()">
                     <b style="color: white">Blanco</b></button>
-                    <button class="button cycle-button" style='background: url("colores/colorHueso2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol2()">
+                <button class="button cycle-button" style='background: url("colores/colorHueso2.jpg"); width: 90px; height: 90px;' onclick="AbrirCol2()">
                     <b style="color: white">Hueso</b></button>
-                </div>
-                <!--Mostrar color seleccionado-->
-                <div id="Eleccion2" style="display: none">
+            </div>
+            <!--Mostrar color seleccionado-->
+            <div id="Eleccion2" style="display: none">
                 <strong><h3>Color:</h3></strong>
                 <div class="input-control text big-input full-size">
-                <input type="text" readonly placeholder="Blanco"></input></div>
+                    <input type="text" readonly placeholder="Blanco"></input></div>
                 <div align="center">
                     <button class="button cycle-button" style='background: url("colores/colorBlanco2.jpg"); width: 90px; height: 90px;'></div>
-                </div>
-                <!--Mostrar color seleccionado mingitorios-->
-                <div id="Eleccion2" style="display: none">
+            </div>
+            <!--Mostrar color seleccionado mingitorios-->
+            <div id="Eleccion2" style="display: none">
                 <strong><h3>Color:</h3></strong>
                 <div class="input-control text big-input full-size">
-                <input type="text" readonly placeholder="Blanco"></input></div>
+                    <input type="text" readonly placeholder="Blanco"></input></div>
                 <div align="center">
                     <button class="button cycle-button" style='background: url("colores/colorBlanco2.jpg"); width: 90px; height: 90px;'></div>
-                </div>
-                <!--Piezas cantidad-->
-                <div id="PiezasProd" style="display: none">
+            </div>
+            <!--Piezas cantidad-->
+            <div id="PiezasProd" style="display: none">
                 <strong><h3>N√∫mero de Piezas:</h3></strong>
-                    <div class="input-control text big-input full-size">
+                <div class="input-control text big-input full-size">
                     <input type="text" id="piezas"></div>
                 <strong><h3>Fecha de vacio:</h3></strong>
-                    <div class="input-control text big-input full-size" data-role="datepicker" id="datepicker" data-locale="es" data-format="dd-mm-yyyy">
+                <div class="input-control text big-input full-size" data-role="datepicker" id="datepicker" data-locale="es" data-format="dd-mm-yyyy">
                     <input type="text">
                     <button class="button"><span class="mif-calendar"></span></button>
-                    </div><br><br>
-                    <div align="right">
+                </div><br><br>
+                <div align="right">
                     <div class="input-control text big-input medium-size">
-                    <button class="button primary" onclick="Siguiente()">Siguiente</button></div>
+                        <button class="button primary" onclick="Siguiente()">Siguiente</button></div>
                     <div class="input-control text big-input medium-size">
-                    <button class="button danger" onclick="Cancelar()">Cancelar</button></div>
-                    </div>
+                        <button class="button danger" onclick="Cancelar()">Cancelar</button></div>
                 </div>
-                <div id="Tabla" style="display: none">
-                    <table class="table  hovered border bordered">
-                        <thead class="center">
-                            <tr>
-                                <th colspan="5" style="text-align: center">CARRO H1C1</th>
-                            </tr>
-                            <tr>
-                                <th style="text-align: center">Producto</th>
-                                <th style="text-align: center">Modelo</th>
-                                <th style="text-align: center">Color</th>
-                                <th style="text-align: center"># Piezas</th>
-                                <th style="text-align: center">Fecha de vacio</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="center">Taza</td>
-                                <td class="center">Dinast√≠a</td>
-                                <td class="center">Blanco</td>
-                                <td class="center">2</td>
-                                <td class="center">2017-09-11</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div align="right">
+            </div>
+            <div id="Tabla" style="display: none">
+                <table class="table  hovered border bordered">
+                    <thead class="center">
+                        <tr>
+                            <th colspan="5" style="text-align: center">CARRO H1C1</th>
+                        </tr>
+                        <tr>
+                            <th style="text-align: center">Producto</th>
+                            <th style="text-align: center">Modelo</th>
+                            <th style="text-align: center">Color</th>
+                            <th style="text-align: center"># Piezas</th>
+                            <th style="text-align: center">Fecha de vacio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="center">Taza</td>
+                            <td class="center">DinastÌa</td>
+                            <td class="center">Blanco</td>
+                            <td class="center">2</td>
+                            <td class="center">2017-09-11</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div align="right">
                     <div class="input-control text big-input medium-size">
-                    <button class="button primary" onclick="">Agregar Producto</button></div>
+                        <button class="button primary" onclick="">Agregar Producto</button></div>
                     <div class="input-control text big-input medium-size">
-                    <button class="button success" onclick="Guardar()">Finalizar  <span class="icon mif-floppy-disk"></span></button></div>
-                    </div>
+                        <button class="button success" onclick="Guardar()">Finalizar  <span class="icon mif-floppy-disk"></span></button></div>
                 </div>
-                <div id="VentanaGuardar" data-role="dialog" class="dialog"  data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
-                    <div class="window success">
+            </div>
+            <div id="VentanaGuardar" data-role="dialog" class="dialog"  data-overlay="true" data-overlay-color="op-dark" data-overlay-click-close="true">
+                <div class="window success">
                     <div class="window-caption">
                         <span class="window-caption-icon"><span class="mif-windows"></span></span>
                         <span class="window-caption-title">Datos Guardados</span>
                         <span class="btn-close"></span>
                     </div>
                     <div class="window-content">
-                    <br><h3>Clave del carro H1C1110917-1</h3><br>
-                    <div class="input-control text">
-                    <button class="button success" onclick="Cancelar()">Nuevo Carro</button></div>
-                    </div>
-                    </div>
+                        <br><h3>Clave del carro H1C1110917-1</h3><br>
+                        <div class="input-control text">
+                            <button class="button success" onclick="Cancelar()">Nuevo Carro</button></div>
                     </div>
                 </div>
+            </div>
         </div>
-   </body>
+    </div>
+</body>
 </html>
 
 

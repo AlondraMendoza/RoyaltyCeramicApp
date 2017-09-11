@@ -6,10 +6,10 @@
         <link href="css/metro-icons.min.css" rel="stylesheet">
         <script src="js/metro.js"></script>
         <script type="text/javascript">
-           
+
             function Info()
-             {
-                 metroDialog.open('#EditarProducto');
+            {
+                metroDialog.open('#EditarProducto');
             }
             $(document).ready(function () {
                 $(".btn-close").click(function () {
@@ -47,7 +47,7 @@
             {
                 $.Notify({
                     caption: 'Correcto',
-                    content: 'La informaci贸n ha sido guardada con 茅xito',
+                    content: 'La informaci髇 ha sido guardada con 茅xito',
                     type: 'success'
                 });
             }
@@ -58,12 +58,12 @@
                 $("#newProd3").fadeIn();
                 $("#nuevoProd1").fadeOut();
             }
-         
+
         </script>
-        <title>Royalty Ceramic/Administraci贸n</title>
+        <title>Royalty Ceramic/Administraci髇</title>
     </head>
     <body>
-<div class="app-bar" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
+        <div class="app-bar" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
             <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
 
             <ul class="app-bar-menu">
@@ -75,8 +75,8 @@
                     <li>
                         <a href="" class="dropdown-toggle">Productos</a>
                         <ul class="d-menu" data-role="dropdown">
-                            <li><a href="">L铆nea Residencial</a></li>
-                            <li><a href="">L铆nea Comercial</a></li>
+                            <li><a href="">L韓ea Residencial</a></li>
+                            <li><a href="">L韓ea Comercial</a></li>
                             <li><a href="">Lavabos</a></li>
                             <li><a href="">Mingitorios</a></li>
                             <li class="divider"></li>
@@ -101,8 +101,8 @@
                         <center>
                             <img src="img/user.png" style="width: 100px;">
                             <br>
-                            <b>Paola Carrillo L贸pez</b><br>
-                            Administraci贸n del Sistema
+                            <b>Paola Carrillo L髉ez</b><br>
+                            Administraci髇 del Sistema
                             <i>Administrador</i>
                         </center>
                     </div>
@@ -110,84 +110,92 @@
             </div>
         </div>
         <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
-            <h1>EDICI脫N DE COLORES</h1><br>
-                <div>
+            <h1><div class="dropdown-button">
+                    <button class="button dropdown-toggle large-button fg-darkCrimson" style="size: "> <span class="mif-link"></span></button>
+                    <ul class="split-content d-menu" data-role="dropdown" style="border-color:white">
+                        <li><a href="Reportes.html">Panel General</a></li>
+                        <li><a href="NuevoTrabajador.html">Captura Trabajador</a></li>
+                        <li><a href="nuevoModelo.html">Captura Modelo</a></li>
+                        <li><a href="nuevoProducto.html">Captura Producto</a></li>
+                    </ul>
+                </div>  EDICI覰 DE COLORES</h1><br>
+            <div>
                 <table class="table striped" id="resultados" >
                     <thead>
                         <tr>
-                        <th style="text-align: center; width: 30%">Colores</th>
-                        <th style="text-align: center; width: 30%">Imagenes</th>
-                        <th style="text-align: center; width: 40%">Acciones</th>
+                            <th style="text-align: center; width: 30%">Colores</th>
+                            <th style="text-align: center; width: 30%">Imagenes</th>
+                            <th style="text-align: center; width: 40%">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="center"><div id="nom1">Blanco</div><div id="nom2" style="display: none" class="input-control text"><input type="text" placeholder="Teclea el nombre"></div></td>
                             <td rowspan=1 style="text-align: center; width: 30%">
-                            <img name='foto' id='foto' class='foto'
-                            src="colores/colorBlanco2.jpg"
-                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
-                            border: #ABABAB 3px solid;
-                            border-top-left-radius: 20px;
-                            border-bottom-right-radius: 20px; "/>
-                            <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
-                            <input name="uploadedfile" type="file" />
-                            <input type="submit" value="Cambiar imagen" />
-                            </form>
+                                <img name='foto' id='foto' class='foto'
+                                     src="colores/colorBlanco2.jpg"
+                                     style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                                     border: #ABABAB 3px solid;
+                                     border-top-left-radius: 20px;
+                                     border-bottom-right-radius: 20px; "/>
+                                <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
+                                    <input name="uploadedfile" type="file" />
+                                    <input type="submit" value="Cambiar imagen" />
+                                </form>
                             </td>
                             <td class="center"><div id="botones1">
-                            <button class="button primary" onclick="Editar()">Editar  <span class="mif-pencil"></span></button>
-                            <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></div>
-                            <div id="botones2" style="display: none"><button class="button success" onclick="Guardar()">Guardar</button>
-                            <button class="button danger" onclick="Cancelar()">Cancelar</button></div></td>
+                                    <button class="button primary" onclick="Editar()">Editar  <span class="mif-pencil"></span></button>
+                                    <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></div>
+                                <div id="botones2" style="display: none"><button class="button success" onclick="Guardar()">Guardar</button>
+                                    <button class="button danger" onclick="Cancelar()">Cancelar</button></div></td>
                         </tr>
                         <tr>
-                        <td class="center">Hueso</td>
-                        <td rowspan=1 style="text-align: center; width: 30%">
-                            <img name='foto' id='foto' class='foto'
-                            src="colores/colorHueso2.jpg"
-                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
-                            border: #ABABAB 3px solid;
-                            border-top-left-radius: 20px;
-                            border-bottom-right-radius: 20px; "/>
-                            <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
-                            <input name="uploadedfile" type="file" />
-                            <input type="submit" value="Cambiar imagen" />
-                            </form>
+                            <td class="center">Hueso</td>
+                            <td rowspan=1 style="text-align: center; width: 30%">
+                                <img name='foto' id='foto' class='foto'
+                                     src="colores/colorHueso2.jpg"
+                                     style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                                     border: #ABABAB 3px solid;
+                                     border-top-left-radius: 20px;
+                                     border-bottom-right-radius: 20px; "/>
+                                <form enctype="multipart/form-data" action="uploader.php" method="POST" style="display: none" id="formulario">
+                                    <input name="uploadedfile" type="file" />
+                                    <input type="submit" value="Cambiar imagen" />
+                                </form>
                             </td>
-                        <td class="center">
-                        <button class="button primary">Editar  <span class="mif-pencil"></span></button>
-                        <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></td>
+                            <td class="center">
+                                <button class="button primary">Editar  <span class="mif-pencil"></span></button>
+                                <button class="button danger">Eliminar  <span class="mif-cancel"></span></button></td>
                         </tr>
-                                               <tr><div >
-                            <td id="nuevoProd1" colspan="3" class="center">
+                        <tr><div >
+                        <td id="nuevoProd1" colspan="3" class="center">
                             <button class="button success" onclick="Nuevo()">Nuevo</button>
                             <button class="button danger">Cancelar</button></td>
-                            </div>
-                            <div>
-                            <td id="newProd1" style="display: none" class="center"><div id=""  class="input-control text"><input type="text" placeholder="Teclea el nombre"></div></td>
-                            <td id="newProd2" style="display: none" rowspan=1 style="text-align: center; width: 30%">
+                    </div>
+                    <div>
+                        <td id="newProd1" style="display: none" class="center"><div id=""  class="input-control text"><input type="text" placeholder="Teclea el nombre"></div></td>
+                        <td id="newProd2" style="display: none" rowspan=1 style="text-align: center; width: 30%">
                             <img name='foto' id='foto' class='foto'
-                            src="img/imagen.png"
-                            style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
-                            border: #ABABAB 3px solid;
-                            border-top-left-radius: 20px;
-                            border-bottom-right-radius: 20px;"/>
+                                 src="img/imagen.png"
+                                 style="margin: 0px; padding: 0px; 0 px; height: 150px; width: 150px; padding: 3px 5px;
+                                 border: #ABABAB 3px solid;
+                                 border-top-left-radius: 20px;
+                                 border-bottom-right-radius: 20px;"/>
                             <form enctype="multipart/form-data" action="uploader.php" method="POST">
-                            <input name="uploadedfile" type="file" />
-                            <input type="submit" value="Cambiar imagen" />
+                                <input name="uploadedfile" type="file" />
+                                <input type="submit" value="Cambiar imagen" />
                             </form>
-                            </td>
-                            <td id="newProd3" style="display: none" class="center">
+                        </td>
+                        <td id="newProd3" style="display: none" class="center">
                             <div id=""><button class="button success" onclick="">Guardar</button>
-                            <button class="button danger" onclick="">Cancelar</button></div></td>
-                            </div>
-                        </tr>
+                                <button class="button danger" onclick="">Cancelar</button></div></td>
+                    </div>
+                    </tr>
                     </tbody>
                 </table>
-                </div>
+            </div>
         </div>
-   </body>
+    </body>
 </html>
 
 
