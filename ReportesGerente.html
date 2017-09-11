@@ -17,6 +17,10 @@
                 var graf = grafica(1, 5);
                 $("#grafica").html("<img src='graficas/" + graf + ".jpg' width='500px' height='300px'>");
             }
+             $(function ()
+            {
+                $("#datepicker").datepicker();
+            });
         </script>
     </head>
     <body>
@@ -90,11 +94,11 @@
                         </tr>
                     </thead>
                     <tr>
-                        <td>Inicio: <div class="input-control text" style="height:80px;font-size: x-large" data-role="datepicker">
+                        <td>Inicio: <div class="input-control text" style="height:80px;font-size: x-large" data-role="datepicker" data-locale="es" data-format="dd-mm-yyyy" id="datepicker">
                                 <input type="text">
                                 <button class="button" style="height: 80px"><span class="mif-calendar"></span></button>
                             </div>
-                            Fin:    <div class="input-control text" style="height:80px;font-size: x-large" data-role="datepicker">
+                            Fin:    <div class="input-control text" style="height:80px;font-size: x-large" data-role="datepicker" data-locale="es" data-format="dd-mm-yyyy" id="datepicker">
                                 <input type="text">
                                 <button class="button" style="height: 80px"><span class="mif-calendar" ></span></button>
                             </div>
