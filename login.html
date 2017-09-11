@@ -26,7 +26,20 @@
             function Iniciar()
             {
                 var pagina = $("#user_login").val();
-                window.location = pagina;
+                if(pagina="1"){
+                    window.location = "panelGerencia.html";
+                }else if(pagina="2"){
+                    window.location = "Reportes.html";
+                }else if(pagina="3"){
+                    window.location = "panelCapturista.html";
+                }else if(pagina="4"){
+                    window.location = "panelClasificacion.html";
+                }else if(pagina="5"){
+                    window.location = "panelAlmacenista.html";
+                }else{
+                    window.location = "panelCEDIS.html";
+                }
+                
             }
         </script>
     <body style="background-color: gray" class="center">
@@ -35,9 +48,17 @@
                 <h1 class="text-light">Royalty Ceramic</h1>
                 <hr class="thin">
                 <br>
-                <div class="input-control text full-size" data-role="input">
+                <div class="input-control select full-size" data-role="select">
                     <label for="user_login">Usuario:</label>
-                    <input type="text" name="user_login" id="user_login" style="padding-right: 36px;">
+                    <!--<input type="text" name="user_login" id="user_login" style="padding-right: 36px;">-->
+                    <select>
+                        <option value="1">Gerencia</option>
+                        <option value="2">Administración</option>
+                        <option value="3">Capturista</option>
+                        <option value="4">Clasificación</option>
+                        <option value="5">Almacén</option>
+                        <option value="6">CEDIS</option>
+                    </select>
                     <button class="button helper-button clear" tabindex="-1" type="button"><span class="mif-cross"></span></button>
                 </div>
                 <br>
