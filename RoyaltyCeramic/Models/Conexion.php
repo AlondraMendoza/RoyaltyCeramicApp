@@ -13,7 +13,7 @@ class Conexion {
     private $con;
 
     public function __construct() {
-        $this->con = new \mysqli($this->datos['host'], $this->datos["user"], $this->datos["pass"], $this->datos["royaltyceramic"]);
+        $this->con = new \mysqli($this->datos['host'], $this->datos["user"], $this->datos["pass"], $this->datos["db"]);
     }
 
     public function Ejecutar($query) {

@@ -45,11 +45,25 @@ class Usuarios {
         $this->con->Ejecutar($query);
     }
 
+    public static function NoUsuariosLogin($usuario, $contra) {
+        $cone = new Conexion();
+        $query = "SELECT count(*) as cuantos , Nombre from Usuarios u WHERE u.`Nombre`='" . $usuario . "' AND u.`Contrasena`='" . $contra . "' group by Nombre";
+        $result = $cone->Consultar($query);
+        $fila = mysqli_fetch_assoc($result);
+        return $fila;
+    }
+
     public function Vista() {
-        $query = "SELECT Usuarios.*,Personas.Nombre as NombreUsuario FROM Usuarios INNER JOIN Personas ON Personas.IdPersonas=Usuarios.PersonasId WHERE IdUsuarios='{$this->UsuariosId}'";
+
+
+        $query = "SELECT Usuarios.*, Personas.Nombre as NombreUsuario FROM Usuarios INNER JOIN Personas ON Personas.IdPersonas = Usuarios.PersonasId WHERE IdUsuarios = '{$this->UsuariosId}'";
         $datos = $this->con->Consultar($query);
         $fila = mysqli_fetch_assoc($datos);
         return $fila;
+    }
+
+    public static function NombreCompleto() {
+        return "Tania Torres";
     }
 
 }

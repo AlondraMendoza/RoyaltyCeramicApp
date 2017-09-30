@@ -48,7 +48,6 @@ class Modelos {
         //$query = "SELECT Modelos.*,Personas.Nombre as NombreUsuario FROM Modelos INNER JOIN Usuarios ON Modelos.UsuariosId=Usuarios.IdUsuarios INNER JOIN Personas ON Personas.IdPersonas=Usuarios.PersonasId WHERE Modelos.IdModelos={$this->IdModelos}";
         $query = "Select * from Modelos where IdModelos=1";
         $datos = $this->con->Consultar($query);
-        echo "" . $datos . "asdasda";
         $fila = mysqli_fetch_assoc($datos);
         return $fila;
     }
