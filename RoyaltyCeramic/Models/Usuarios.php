@@ -66,6 +66,13 @@ class Usuarios {
         return "Tania Torres";
     }
 
+    public function ObtenerPerfiles() {
+        //print_r("SELECT per.Nombre FROM PerfilesUsuarios p JOIN Perfiles per ON per.IdPerfiles=p.PerfilesId WHERE Activo=1 AND p.UsuariosId=1");
+        $query = "SELECT per.Nombre,per.IdPerfiles FROM PerfilesUsuarios p JOIN Perfiles per ON per.IdPerfiles=p.PerfilesId WHERE per.Activo=1 AND p.UsuariosId=" . $this->IdUsuarios;
+        $datos = $this->con->Consultar($query);
+        return $datos;
+    }
+
 }
 
 ?>

@@ -12,8 +12,19 @@ class usuarioController {
         $this->modelo = new Modelo();
     }
 
+    public function ObtenerUsuario() {
+        $usuario = new \Models\Usuarios();
+        $usuario->set("IdUsuarios", 1);
+        return $usuario;
+    }
+
     public function index() {
-        
+        $lista = $this->ObtenerUsuario()->ObtenerPerfiles();
+
+        $array = [
+            "listaperfiles" => $lista,
+            "otravariable" => 5,];
+        return $array;
     }
 
     public static function NombreCompleto() {

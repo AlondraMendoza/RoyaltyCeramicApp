@@ -78,7 +78,7 @@ class Template {
                         </div>
                     </div>
                 </div>
-                <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br>
+                <div class="contenido" style="padding-left: 30px;padding-right: 30px"><br><br>
                     <?php
                 }
 

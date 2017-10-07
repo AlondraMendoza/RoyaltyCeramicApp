@@ -5,9 +5,9 @@ namespace Models;
 class Conexion {
 
     private $datos = array(
-        "host" => 'localhost',
-        "user" => 'root',
-        "pass" => 'root',
+        "host" => '107.180.56.151',
+        "user" => 'AGMB',
+        "pass" => 'goku123',
         "db" => 'royaltyceramic',
     );
     private $con;
