@@ -23,7 +23,11 @@ class Hornos {
         return $this->$atributo;
     }
 
-    
+    public function ListarHornos() {
+        $query = "SELECT Hornos.* FROM Hornos where Activo=1";
+        $datos = $this->con->Consultar($query);
+        return $datos;
+    }
 
 }
 

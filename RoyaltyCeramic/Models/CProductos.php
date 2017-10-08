@@ -22,6 +22,12 @@ class CProductos {
     public function get($atributo) {
         return $this->$atributo;
     }
+    
+     public function ListarProductos() {
+        $query = "SELECT CProductos.* FROM CProductos where Activo=1";
+        $datos = $this->con->Consultar($query);
+        return $datos;
+    }
 
 }
 
