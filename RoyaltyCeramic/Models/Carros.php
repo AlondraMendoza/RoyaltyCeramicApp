@@ -5,6 +5,7 @@ namespace Models;
 class Carros {
 
     private $IdCarros;
+    private $Nombre;
     private $Fecha;
     private $Hora;
     private $Activo;
