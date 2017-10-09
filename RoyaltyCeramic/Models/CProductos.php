@@ -24,11 +24,12 @@ class CProductos {
         return $this->$atributo;
     }
     
-     public function ListarProductos() {
+    public function ListarProductos() {
         $query = "SELECT CProductos.* FROM CProductos where Activo=1 and Nombre != 'Accesorios'";
         $datos = $this->con->Consultar($query);
         return $datos;
     }
+    
 
 }
 
