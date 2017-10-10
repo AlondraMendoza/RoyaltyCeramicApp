@@ -64,6 +64,9 @@ textarea {
     font-size: 100%;
     vertical-align: middle;
 }
+select{
+    font-size: 1.6em;
+}
 button,
 input {
     line-height: normal;
@@ -2291,7 +2294,7 @@ a.tag {
 }
 .app-bar .app-bar-element .d-menu .dropdown-toggle:before {
     border-color: #1d1d1d;
-    
+
 }
 .app-bar .app-bar-divider {
     display: block;
@@ -2304,7 +2307,7 @@ a.tag {
 }
 .app-bar .dropdown-toggle:before {
     border-color: #cccccc;
-    
+
 }
 .app-bar .app-bar-menu {
     display: block;

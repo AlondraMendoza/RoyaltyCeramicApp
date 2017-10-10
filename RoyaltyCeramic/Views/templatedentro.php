@@ -30,10 +30,8 @@ class Template {
                 <title>Royalty Ceramic</title>
             </head>
             <body>
-
-                <div class="app-bar fixed-top" data-role="appbar" style="background-color: #B82134;padding-right: 20px;">
-                    <a class="app-bar-element" href="index.html"><img src="logo.png" style="height: 45px;width: 180px"></a>
-
+                <div class="app-bar" data-role="appbar" style="background-color: #5a0303;padding-right: 20px;">
+                    <a class="app-bar-element" href="<?php echo URL; ?>inicio/index"><img src="<?php echo URL; ?>Views/template/img/logo.png" style="height: 45px;width: 180px"></a>
                     <ul class="app-bar-menu">
                         <li><a href="">Inicio</a></li>
                         <li><a href="">Cuenta</a></li>

@@ -21,7 +21,7 @@
                 $menus = $perfil->ObtenerMenus();
                 while ($m = mysqli_fetch_assoc($menus)) {
                     ?>
-                    <button class = "command-button icon-left bg-<?php echo $m["Color"]; ?> fg-white" onclick = "window.location = 'BitacoraCorrecciones.html'">
+                    <button class = "command-button icon-left bg-<?php echo $m["Color"]; ?> fg-white" onclick = "window.location = '<?php echo $m["Ruta"] ?>'">
                         <span class = "icon mif-<?php echo $m["Icono"]; ?>"></span>
                         <?php echo $m["Nombre"]; ?>
                         <small><?php echo $m["Descripcion"] ?></small>
