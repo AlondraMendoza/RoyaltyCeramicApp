@@ -66,6 +66,7 @@ textarea {
 }
 select{
     font-size: 1.6em;
+    height: 80px;
 }
 button,
 input {

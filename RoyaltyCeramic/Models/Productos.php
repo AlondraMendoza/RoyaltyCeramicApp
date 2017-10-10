@@ -7,8 +7,9 @@ class Productos {
     private $IdProductos;
     private $Nombre;
     private $Descripcion;
-    private $CProductosModelosId;
-    private $ModelosColoresId;
+    private $CProductosId;
+    private $ModelosId;
+    private $ColoresId;
     private $CarrosId;
     private $HornosId;
     private $FechaQuemado;

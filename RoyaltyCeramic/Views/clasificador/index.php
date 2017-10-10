@@ -37,7 +37,7 @@
                         <?php
                         $rhornos = $datos["hornos"];
                         if ($rhornos->num_rows == 0) {
-                            ?><option value="0">No hay productos pendientes de clasificar</option><?php
+                            ?><option value="0" >No hay productos pendientes de clasificar</option><?php
                         } else {
                             while ($fila = mysqli_fetch_assoc($rhornos)) {
                                 $pendientes = Models\Hornos::ListaProductosDia($datos["hoyingles"], $fila["IdHornos"]);
