@@ -77,6 +77,19 @@ class clasificadorController {
         return $arreglo;
     }
 
+    public function ModelosHornoFechaProducto() {
+        $horno = $_REQUEST["horno"];
+        $fecha = $_REQUEST["fecha"];
+        $cprod = $_REQUEST["cprod"];
+        $dia = $this->FechaIngles($fecha);
+        $modelos = \Models\Productos::ListarModelosHornoFechaProducto($dia, $horno, $cprod);
+        $arreglo = [
+            "dia" => $dia,
+            "modelos" => $modelos
+        ];
+        return $arreglo;
+    }
+
 }
 
 ?>
