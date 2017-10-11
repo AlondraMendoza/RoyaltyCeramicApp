@@ -1,6 +1,6 @@
 <strong style="font-size: 1.3em" class="fg-darkEmerald">Selecciona el horno de quemado:</strong><br>
 <div id="" class="input-control select full-size" style="height: 80px;">
-    <select onchange="CargarProductos()" id="hornos" onchange="CargarProductos()">
+    <select onselect= "CargarProductos()" id="hornos" onchange="CargarProductos()">
         <?php
         $rhornos = $datos["hornos"];
         if ($rhornos->num_rows == 0) {
@@ -17,12 +17,3 @@
         ?>
     </select>
 </div>
-
-<div id="prueba"></div>
-<button onclick="hola()">Aquiiiiiií</button>
-<script>
-    function hola() {
-        alert("entro");
-        $("#prueba").load("clasificador/Prueba");
-    }
-</script>

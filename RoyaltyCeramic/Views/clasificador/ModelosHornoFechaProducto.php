@@ -10,7 +10,7 @@ $modelos = $datos["modelos"];
             <?php
             while ($fila = mysqli_fetch_assoc($modelos)) {
                 ?>
-                <div class="image-container rounded bordered" style="width: 200px;height: 200px" onclick="CargarColores()">
+                <div class="image-container rounded bordered" style="width: 200px;height: 200px" onclick="CargarColores(<?php echo $fila["ModelosId"] . ',' . $fila["CProductosId"]; ?>)">
                     <div class="frame">
                         <img src="<?php echo URL; ?>Views/template/imagenes/<?php echo $fila["Imagen"]; ?>" height="190px;" width="190px;" title="<?php echo $fila["Nombre"]; ?>">        
                     </div>
@@ -27,5 +27,5 @@ $modelos = $datos["modelos"];
             <?php }
             ?>  </div>
     </div>
-    
+
 </div>

@@ -5,10 +5,10 @@ namespace Models;
 class Conexion {
 
     private $datos = array(
-        "host" => '107.180.56.151',
-        "user" => 'AGMB',
-        "pass" => 'goku123',
-        "db" => 'royaltyceramic',
+        "host" => '23.229.173.39',
+        "user" => 'TCTH',
+        "pass" => 'tania123',
+        "db" => 'RoyaltyPruebas',
     );
     private $con;
 

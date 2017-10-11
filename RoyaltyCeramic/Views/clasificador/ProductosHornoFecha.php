@@ -20,7 +20,7 @@ $productos = $datos["productos"];
                             <?php
                             $pendientes = Models\Productos::ListarProductosHornoFechaCProd($datos["dia"], $fila["HornosId"], $fila["CProductosId"]);
                             ?>
-                            <?php echo $pendientes; ?> productos pendientes de clasificación
+                            <?php echo $pendientes; ?> prod. pendiente(s) de clasificación.
                         </p>
                     </div>
                 </div>
