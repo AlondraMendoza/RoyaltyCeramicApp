@@ -12,7 +12,10 @@ class Request {
         if (isset($_REQUEST['url'])) {
             $ruta = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8dd6de6a903b4e05158dd87bd2aa669da3725ed1
 =======
 >>>>>>> 8dd6de6a903b4e05158dd87bd2aa669da3725ed1
             $ruta = explode("/", $ruta);

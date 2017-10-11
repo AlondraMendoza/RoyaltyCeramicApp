@@ -8,7 +8,6 @@ class capturistaController {
         
     }
 
-<<<<<<< HEAD
 //    public function capturaCarro() {
 //        $productos = new \Models\CProductos();
 //        $p = $productos->ListarProductos();
@@ -37,14 +36,6 @@ class capturistaController {
     public function capturaCarro() {
         $p = \Models\CProductos::ListarProductos();
         $h = \Models\Hornos::ListarHornos();
-
-=======
-    public function CapturaCarro() {
-        $productos = new \Models\CProductos();
-        $p = $productos->ListarProductos();
-        $hornos = new \Models\Hornos();
-        $h= $hornos->ListarHornos();
->>>>>>> 8dd6de6a903b4e05158dd87bd2aa669da3725ed1
         $array = [
             "listaproductos" => $p,
             "hornos" => $h];
@@ -58,14 +49,11 @@ class capturistaController {
             "modelo" => $m,];
         return $array;
     }
-<<<<<<< HEAD
 
     public function index() {
         
     }
 
-=======
-    
     public function ObtenerColores() {
         $id = $_REQUEST["id"];
         $c = \Models\Colores::ListarColores($id);
@@ -73,8 +61,7 @@ class capturistaController {
             "color" => $c,];
         return $array;
     }
-    
->>>>>>> 8dd6de6a903b4e05158dd87bd2aa669da3725ed1
+
 }
 
 ?>
