@@ -1,9 +1,13 @@
 <?php
+
 namespace Controllers;
+
 class clasificadorController {
+
     public function __construct() {
         
     }
+
     public function FechaIngles($date) {
         if ($date) {
             $fecha = $date;
@@ -81,10 +85,7 @@ class clasificadorController {
         return $arreglo;
     }
 
-    public function Prueba() {
-        $algo = "hola de nuevo";
-        return $algo;
-    }
+ 
 
 }
 

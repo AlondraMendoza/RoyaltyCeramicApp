@@ -11,7 +11,10 @@ class Request {
     public function __construct() {
         if (isset($_REQUEST['url'])) {
             $ruta = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
-            print_r($ruta);
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8dd6de6a903b4e05158dd87bd2aa669da3725ed1
             $ruta = explode("/", $ruta);
             $ruta = array_filter($ruta);
             if ($ruta[0] == "index.php") {

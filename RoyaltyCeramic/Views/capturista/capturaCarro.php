@@ -1,10 +1,26 @@
 <br><br>
 <script>
+    $(document).ready(function () {
+        
+    });
+    
     function AbrirModelos(id)
     {
         $("#MostrarModelos").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando modelos');
-        $("#MostrarModelos").load("capturista/ObtenerModelos", {"id": id, "withouttem": 1});
+        $("#MostrarModelos").load("ObtenerModelos", {"id": id, "withouttem": 1});
     }
+    
+    function AbrirColores(id)
+    {
+        $("#MostrarColores").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando colores');
+        $("#MostrarColores").load("ObtenerColores", {"id": id, "withouttem": 1});
+    }
+    
+    function VerOtros()
+    {
+        $("#DivOtros").fadeIn();
+    }
+  
 </script>
 <h1><b> CAPTURA DE PRODUCTOS</b></h1><br>
 <center>
@@ -38,7 +54,6 @@
             </table>
             <hr style="background-color: gray;height: 1px;">
             <div id="MostrarProd">
-                <br>
                 <b style="font-size: 1.3em" class="fg-darkEmerald">Selecciona el Producto:</b>
                 <div data-role="group" data-group-type="one-state">   
                     <?php
@@ -51,16 +66,40 @@
                 </div>
             </div>
             <hr style="background-color: gray;height: 1px;">
-            <div id="MostrarModelos">  
+            <div id="MostrarModelos"></div>
+            <hr style="background-color: gray;height: 1px;">
+            <div id="MostrarColores"></div>
+            <hr style="background-color: gray;height: 1px;">
+            <div id="DivOtros" style="display: none">
+                <table class="table">
+                <tr>
+                    <td style="width: 50%" class="center">
+                        <b style="font-size: 1.3em" class="fg-darkEmerald">Cantidad de piezas:</b><br> 
+                        <div class="input-control text full-size" style="height:80px;font-size: x-large">
+                            <input type="text" id="piezas" placeholder="Teclea la cantidad">
+                        </div>
+                    </td>
+                    <td class="center">
+                        <b style="font-size: 1.3em" class="fg-darkEmerald">Fecha de quemado:</b><br>
+                        <div class="input-control text big-input full-size" data-role="datepicker" id="datepicker" data-locale="es" data-format="dd-mm-yyyy">
+                        <input type="text">
+                        <button class="button"><span class="mif-calendar"></span></button>
+                        </div>
+                    </td>
+                </tr>
+                </table>
             </div>
         </div>
     </div>
 </center>
+<<<<<<< HEAD:RoyaltyCeramic/Views/capturista/capturaCarro.php
 <div id="prueba"></div>
-    <button onclick="hola()">Aquiiiiiií</button>
+<button onclick="hola()">Aquiiiiiií</button>
 <script>
-function hola(){
-    alert("entro");
-    $("#prueba").load("capturista/Prueba");
-}    
+    function hola() {
+        alert("entro");
+        $("#prueba").load("capturista/Prueba");
+    }
 </script>
+=======
+>>>>>>> 8dd6de6a903b4e05158dd87bd2aa669da3725ed1:RoyaltyCeramic/Views/capturista/CapturaCarro.php

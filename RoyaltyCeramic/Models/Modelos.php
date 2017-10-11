@@ -12,7 +12,7 @@ class Modelos {
     private $con;
 
     public function __construct() {
-        $this->con = new Conexion();
+        
     }
 
     public function set($atributo, $valor) {
@@ -51,12 +51,19 @@ class Modelos {
         $fila = mysqli_fetch_assoc($datos);
         return $fila;
     }
+<<<<<<< HEAD
+
+    public static function ListarModelos($id) {
+        $con = new Conexion();
+        $query = "SELECT m.Nombre, CPM.Imagen from CProductos as p join CProductosModelos "
+=======
     
     public function ListarModelos($id) {
-        $query = "SELECT m.Nombre, CPM.Imagen from CProductos as p join CProductosModelos "
+        $query = "SELECT m.Nombre, CPM.Imagen, m.IdModelos from CProductos as p join CProductosModelos "
+>>>>>>> 8dd6de6a903b4e05158dd87bd2aa669da3725ed1
                 . "as CPM on p.IdCProductos=CPM.CProductosId join Modelos as m on CPM.ModelosId=m.IdModelos "
                 . "where p.Activo=1 and p.IdCProductos=$id";
-        $datos = $this->con->Consultar($query);
+        $datos = $con->Consultar($query);
         return $datos;
     }
 

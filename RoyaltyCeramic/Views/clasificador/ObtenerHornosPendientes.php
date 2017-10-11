@@ -17,3 +17,12 @@
         ?>
     </select>
 </div>
+
+<div id="prueba"></div>
+<button onclick="hola()">Aquiiiiiií</button>
+<script>
+    function hola() {
+        alert("entro");
+        $("#prueba").load("clasificador/Prueba");
+    }
+</script>
