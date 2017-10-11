@@ -22,9 +22,10 @@ class Colores {
     public function get($atributo) {
         return $this->$atributo;
     }
-    
-    public static function ListarColores($id){
+
+    public static function ListarColores($id) {
         $con = new Conexion();
+
         $query = "SELECT c.Nombre, c.Descripcion from Colores as c join ModelosColores
         as MC on c.IdColores=MC.ColoresId join Modelos as m on MC.ModelosId=m.IdModelos
         where c.Activo=1 and m.IdModelos=$id";
@@ -32,10 +33,7 @@ class Colores {
         return $datos;
     }
 
-    
-
 }
-
 ?>
 
 
