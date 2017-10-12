@@ -5,7 +5,7 @@
         <?php
             while ($fila = mysqli_fetch_assoc($color)) {
             ?>
-            <button class="button" style='width: 210px; height: 210px;' onclick="">
+            <button class="button" style='width: 210px; height: 210px;' onclick="VerOtros()">
             <input type="image" src="<?php echo URL; ?>Views/template/colores/<?php echo $fila["Descripcion"];?>" height="190px;" width="190px;" title="<?php echo $fila["Nombre"]; ?>"/><b>
             <?php echo $fila["Nombre"]; ?></b></button>    
             <?php }?>

@@ -15,6 +15,11 @@
         $("#MostrarColores").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando colores');
         $("#MostrarColores").load("ObtenerColores", {"id": id, "withouttem": 1});
     }
+    
+    function VerOtros()
+    {
+        $("#DivOtros").fadeIn();
+    }
   
 </script>
 <h1><b> CAPTURA DE PRODUCTOS</b></h1><br>
@@ -65,7 +70,7 @@
             <hr style="background-color: gray;height: 1px;">
             <div id="MostrarColores"></div>
             <hr style="background-color: gray;height: 1px;">
-            <div id="Otros">
+            <div id="DivOtros" style="display: none">
                 <table class="table">
                 <tr>
                     <td style="width: 50%" class="center">
@@ -82,7 +87,7 @@
                         </div>
                     </td>
                 </tr>
-            </table>
+                </table>
             </div>
         </div>
     </div>
