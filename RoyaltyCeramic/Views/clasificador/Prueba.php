@@ -1,1 +1,1 @@
-Era porque le hablo del index y Alondra de una vista normal
+Hola mundo

@@ -81,10 +81,7 @@ class clasificadorController {
         return $arreglo;
     }
 
-    public function Prueba() {
-        $algo = "hola de nuevo";
-        return $algo;
-    }
+ 
 
 }
 
