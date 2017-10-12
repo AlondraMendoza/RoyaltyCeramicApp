@@ -2,31 +2,41 @@
 
 namespace Controllers;
 
-use Models\Modelos as Modelo;
-
 class capturistaController {
 
-    private $modelo;
+    
 
     public function __construct() {
-        $this->modelo = new Modelo();
+        
     }
 
     public function capturaCarro() {
         $productos = new \Models\CProductos();
         $p = $productos->ListarProductos();
-        $modelos = new \Models\Modelos();
-        $m = $modelos->ListarModelos(1);
         $hornos = new \Models\Hornos();
         $h= $hornos->ListarHornos();
         $array = [
             "listaproductos" => $p,
-            "hornos" => $h,
-            "modelos" => $m];
+            "hornos" => $h,];
         return $array;
     }
-
-
+    public function index()
+    {
+        
+    }
+       public function Prueba() {
+        $algo = "hola de nuevo";
+        return $algo;
+    }
+    public function ObtenerModelos() {
+        $id = $_REQUEST["id"];
+        $modelos = new \Models\Modelos();
+        $m = $modelos->ListarModelos($id);
+        $array = [
+            "modelo" => $m,];
+        return $array;
+    }
+    
 }
 
 ?>

@@ -1,22 +1,13 @@
 <?php
-
 namespace Controllers;
-
-use Models\Modelos as Modelo;
-
 class clasificadorController {
-
-    private $modelo;
-
     public function __construct() {
         
     }
-
     public function FechaIngles($date) {
         if ($date) {
             $fecha = $date;
             $hora = "";
-
             # separamos la fecha recibida por el espacio de separación entre
             # la fecha y la hora
             $fechaHora = explode(" ", $date);
@@ -88,6 +79,11 @@ class clasificadorController {
             "modelos" => $modelos
         ];
         return $arreglo;
+    }
+
+    public function Prueba() {
+        $algo = "hola de nuevo";
+        return $algo;
     }
 
 }

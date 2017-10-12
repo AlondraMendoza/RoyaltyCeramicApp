@@ -24,8 +24,8 @@ $modelos = $datos["modelos"];
                         </p>
                     </div>
                 </div>
-
             <?php }
             ?>  </div>
-    </div>   
+    </div>
+    
 </div>

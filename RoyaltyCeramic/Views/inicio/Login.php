@@ -43,18 +43,3 @@
             </div>
         </form>
     </div>
-    <script>
-        function Iniciar()
-        {
-            var user = $("#user").val();
-            var pas = $("#pas").val();
-            $.post("<?php echo URL; ?>inicio/Verificar", {"usuario": user, "contra": pas, "withouttem": 1}, function (data) {
-
-                if (data == "correcto")
-                {
-                    alert(data);
-                    window.location("<?php echo URL; ?>clasificador");
-                }
-            });
-        }
-    </script>

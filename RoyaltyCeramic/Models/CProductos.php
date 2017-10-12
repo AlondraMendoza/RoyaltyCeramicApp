@@ -29,7 +29,6 @@ class CProductos {
         $datos = $this->con->Consultar($query);
         return $datos;
     }
-    
 
 }
 

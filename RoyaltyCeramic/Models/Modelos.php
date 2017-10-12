@@ -53,11 +53,11 @@ class Modelos {
     }
     
     public function ListarModelos($id) {
-        $query = "SELECT m.Nombre, CPM.Imagen from CProductos as p join CProductosModelos as CPM 
-        on p.IdCProductos=CPM.CProductosId
-        join Modelos as m on CPM.ModelosId=m.IdModelos where p.Activo=1 and p.IdCProductos={$id}";
-        $datos1 = $this->con->Consultar($query);
-        return $datos1;
+        $query = "SELECT m.Nombre, CPM.Imagen from CProductos as p join CProductosModelos "
+                . "as CPM on p.IdCProductos=CPM.CProductosId join Modelos as m on CPM.ModelosId=m.IdModelos "
+                . "where p.Activo=1 and p.IdCProductos=$id";
+        $datos = $this->con->Consultar($query);
+        return $datos;
     }
 
 }

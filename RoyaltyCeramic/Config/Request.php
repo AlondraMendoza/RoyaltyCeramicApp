@@ -9,8 +9,9 @@ class Request {
     private $argumento;
 
     public function __construct() {
-        if (isset($_GET['url'])) {
+        if (isset($_REQUEST['url'])) {
             $ruta = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
+            print_r($ruta);
             $ruta = explode("/", $ruta);
             $ruta = array_filter($ruta);
             if ($ruta[0] == "index.php") {
@@ -18,7 +19,6 @@ class Request {
             } else {
                 $this->controlador = strtolower(array_shift($ruta));
             }
-
             $this->metodo = strtolower(array_shift($ruta));
             if (!$this->metodo) {
                 $this->metodo = "index";
