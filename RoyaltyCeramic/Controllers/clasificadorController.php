@@ -85,7 +85,35 @@ class clasificadorController {
         return $arreglo;
     }
 
- 
+    public function CargarColoresClasificacion() {
+        $horno = $_REQUEST["horno"];
+        $fecha = $_REQUEST["fecha"];
+        $cprod = $_REQUEST["cprod"];
+        $mod = $_REQUEST["mod"];
+        $dia = $this->FechaIngles($fecha);
+        $colores = \Models\Productos::ListarColoresClasificacion($dia, $horno, $cprod, $mod);
+        $arreglo = [
+            "dia" => $dia,
+            "colores" => $colores,
+            "cprod" => $cprod
+        ];
+        return $arreglo;
+    }
+
+    public function TablaProductos() {
+        $horno = $_REQUEST["horno"];
+        $fecha = $_REQUEST["fecha"];
+        $cprod = $_REQUEST["cprod"];
+        $mod = $_REQUEST["mod"];
+        $color = $_REQUEST["color"];
+        $dia = $this->FechaIngles($fecha);
+        $productos = \Models\Productos::ProductosSeleccion($dia, $horno, $cprod, $mod, $color);
+        $arreglo = [
+            "dia" => $dia,
+            "productos" => $productos,
+        ];
+        return $arreglo;
+    }
 
 }
 

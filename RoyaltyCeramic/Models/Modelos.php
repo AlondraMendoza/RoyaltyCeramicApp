@@ -54,7 +54,11 @@ class Modelos {
 
     public static function ListarModelos($id) {
         $con = new Conexion();
+<<<<<<< HEAD
         $query = "SELECT m.Nombre, CPM.Imagen,m.IdModelos  from CProductos as p join CProductosModelos "
+=======
+        $query = "SELECT m.Nombre, CPM.Imagen, m.IdModelos from CProductos as p join CProductosModelos "
+>>>>>>> 0af55ce11c6b4f5ce1d5fd227545c00938cc938d
                 . "as CPM on p.IdCProductos=CPM.CProductosId join Modelos as m on CPM.ModelosId=m.IdModelos "
                 . "where p.Activo=1 and p.IdCProductos=$id";
         $datos = $con->Consultar($query);

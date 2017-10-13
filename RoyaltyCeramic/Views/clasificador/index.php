@@ -3,7 +3,7 @@
     {
         $("#divclasificacion").html('');
         $("#tdhornos").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> Cargando hornos con productos pendientes de clasificar...');
-        $("#tdhornos").load("ObtenerHornosPendientes", {"dia": d, "withouttem": 1}, function () {
+        $("#tdhornos").load("clasificador/ObtenerHornosPendientes", {"dia": d, "withouttem": 1}, function () {
             CargarProductos();
         });
     }
@@ -11,22 +11,36 @@
     {
         var d = $("#fecha").val();
         var horno = $("#hornos").val();
-        $("#divclasificacion").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando hornos con productos pendientes de clasificar...');
-        $("#divclasificacion").load("ProductosHornoFecha", {"fecha": d, "withouttem": 1, "horno": horno});
+        $("#divclasificacion").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando tipos de productos con productos pendientes de clasificar...');
+        $("#divclasificacion").load("clasificador/ProductosHornoFecha", {"fecha": d, "withouttem": 1, "horno": horno});
     }
     function CargarModelos(cprod)
     {
         var d = $("#fecha").val();
         var horno = $("#hornos").val();
-        $("#divclasificacion").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando hornos con productos pendientes de clasificar...');
-        $("#divclasificacion").load("ModelosHornoFechaProducto", {"fecha": d, "withouttem": 1, "horno": horno, "cprod": cprod});
+        $("#divclasificacion").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando modelos con productos pendientes de clasificar...');
+        $("#divclasificacion").load("clasificador/ModelosHornoFechaProducto", {"fecha": d, "withouttem": 1, "horno": horno, "cprod": cprod});
+    }
+    function CargarColores(mod, cprod)
+    {
+        var d = $("#fecha").val();
+        var horno = $("#hornos").val();
+        $("#divclasificacion").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando colores con productos pendientes de clasificar...');
+        $("#divclasificacion").load("clasificador/CargarColoresClasificacion", {"fecha": d, "withouttem": 1, "horno": horno, "cprod": cprod, "mod": mod});
+    }
+    function TablaProductos(cprod, mod, color)
+    {
+        var d = $("#fecha").val();
+        var horno = $("#hornos").val();
+        $("#divclasificacion").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando colores con productos pendientes de clasificar...');
+        $("#divclasificacion").load("clasificador/TablaProductos", {"fecha": d, "withouttem": 1, "horno": horno, "cprod": cprod, "mod": mod, "color": color});
     }
     $(document).ready(function () {
         CargarProductos();
     });
 </script>
 
-<h1><b style="color: #333333">CLASIFICACIÓN</b></h1><br>
+<h1 class="light">CLASIFICACIÓN</h1><br>
 <center>
     <div class="panel warning" data-role="panel">
         <div class="heading">
@@ -68,7 +82,8 @@
             </table>
             <hr style="background-color: gray;height: 1px;">
             <div id="divclasificacion"></div>
-
+            <br><br><br><br><br><br>
         </div>
+
     </div>
 </center>
