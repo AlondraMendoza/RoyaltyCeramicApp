@@ -32,7 +32,7 @@ class Conexion {
     }
 
     public function Cerrar() {
-        mysqli::close();
+        $this->con->close();
     }
 
 }
