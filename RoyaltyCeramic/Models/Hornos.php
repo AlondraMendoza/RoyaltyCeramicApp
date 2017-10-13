@@ -27,6 +27,7 @@ class Hornos {
         $con = new Conexion();
         $query = "SELECT Hornos.* FROM Hornos where Activo=1";
         $datos = $con->Consultar($query);
+        $con->Cerrar();
         return $datos;
     }
 
