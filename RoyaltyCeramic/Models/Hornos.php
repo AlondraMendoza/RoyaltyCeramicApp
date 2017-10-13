@@ -72,7 +72,7 @@ class Hornos {
         $dia = $con->EscapaCaracteres($dia);
         $query = "SELECT h.* FROM Productos p JOIN Hornos h ON h.idhornos=p.hornosid WHERE DATE(p.FechaQuemado)='$dia' AND h.Activo=1 AND p.Activo=1 AND p.HornosId=$horno AND p.Clasificado=0  GROUP BY p.IdProductos";
         $datos = $con->Consultar($query);
-
+        $con->Cerrar();
         return $datos;
     }
 

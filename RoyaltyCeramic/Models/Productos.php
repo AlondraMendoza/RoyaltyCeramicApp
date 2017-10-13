@@ -97,6 +97,7 @@ class Productos {
                 . "AND p.CProductosId=$cprod "
                 . "GROUP BY m.IdModelos";
         $datos = $con->Consultar($query);
+        $con->Cerrar();
         return $datos;
     }
 
@@ -119,6 +120,7 @@ class Productos {
                 . "AND p.Clasificado = 0 "
                 . "GROUP BY c.IdColores";
         $datos = $con->Consultar($query);
+        $con->Cerrar();
         return $datos;
     }
 
@@ -136,6 +138,7 @@ class Productos {
                 . "AND p.ColoresId=$color ";
         $datos = $con->Consultar($query);
         $fila = mysqli_fetch_assoc($datos);
+        $con->Cerrar();
         return $fila["cuantos"];
     }
 
@@ -162,6 +165,7 @@ class Productos {
                 . "AND p.Clasificado = 0 "
                 . "AND p.CProductosId = $cprod ";
         $datos = $con->Consultar($query);
+        $con->Cerrar();
         return $datos;
     }
 
