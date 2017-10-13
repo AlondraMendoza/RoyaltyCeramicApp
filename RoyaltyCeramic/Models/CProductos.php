@@ -28,6 +28,7 @@ class CProductos {
         $con = new Conexion();
         $query = "SELECT CProductos.* FROM CProductos where Activo=1 and Nombre != 'Accesorios'";
         $datos = $con->Consultar($query);
+        $con->Cerrar();
         return $datos;
     }
 

@@ -6,10 +6,9 @@ class Carros {
 
     private $IdCarros;
     private $Nombre;
-    private $Fecha;
-    private $Hora;
     private $Activo;
     private $UsuariosId;
+    private $SucursalesId;
     private $con;
 
     public function __construct() {
