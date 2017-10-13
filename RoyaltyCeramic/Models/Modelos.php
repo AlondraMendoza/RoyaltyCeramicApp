@@ -58,6 +58,7 @@ class Modelos {
                 . "as CPM on p.IdCProductos=CPM.CProductosId join Modelos as m on CPM.ModelosId=m.IdModelos "
                 . "where p.Activo=1 and p.IdCProductos=$id";
         $datos = $con->Consultar($query);
+        $con->Cerrar();
         return $datos;
     }
 

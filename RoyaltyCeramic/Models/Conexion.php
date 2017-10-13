@@ -31,4 +31,8 @@ class Conexion {
         return $dato;
     }
 
+    public function Cerrar() {
+        mysqli::close();
+    }
+
 }
