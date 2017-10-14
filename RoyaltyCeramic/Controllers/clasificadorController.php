@@ -107,10 +107,25 @@ class clasificadorController {
         $mod = $_REQUEST["mod"];
         $color = $_REQUEST["color"];
         $dia = $this->FechaIngles($fecha);
+        $catdefectos = \Models\FuncionesUsuario::CategoriasDefectos();
         $productos = \Models\Productos::ProductosSeleccion($dia, $horno, $cprod, $mod, $color);
         $arreglo = [
             "dia" => $dia,
             "productos" => $productos,
+            "mod" => $mod,
+            "cprod" => $cprod,
+            "catdefectos" => $catdefectos,
+        ];
+        return $arreglo;
+    }
+
+    public function CargarDefectos() {
+        $idcat = $_REQUEST["cat_id"];
+        $idprod = $_REQUEST["idprod"];
+        $defectos = \Models\FuncionesUsuario::ListarDefectos($idcat);
+        $arreglo = [
+            "defectos" => $defectos,
+            "idprod" => $idprod,
         ];
         return $arreglo;
     }

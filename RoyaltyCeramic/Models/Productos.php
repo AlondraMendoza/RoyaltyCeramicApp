@@ -147,10 +147,12 @@ class Productos {
         $dia = $con->EscapaCaracteres($dia);
         $query = "SELECT c.Nombre,"
                 . "c.Descripcion,"
+                . "cp.Nombre as NombreProducto,"
                 . "p.ModelosId,"
                 . "p.CProductosId,"
                 . "p.HornosId, "
                 . "c.IdColores, "
+                . "c.Nombre as NombreColor, "
                 . "m.Nombre as NombreModelo, "
                 . "p.IdProductos "
                 . "FROM Productos p "

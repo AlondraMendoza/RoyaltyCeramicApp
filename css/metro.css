@@ -2291,7 +2291,7 @@ a.tag {
 }
 .app-bar .app-bar-element .d-menu .dropdown-toggle:before {
     border-color: #1d1d1d;
-    
+
 }
 .app-bar .app-bar-divider {
     display: block;
@@ -2304,7 +2304,7 @@ a.tag {
 }
 .app-bar .dropdown-toggle:before {
     border-color: #cccccc;
-    
+
 }
 .app-bar .app-bar-menu {
     display: block;
@@ -10429,7 +10429,7 @@ input[type="submit"].link:active {
     padding: .625rem;
 }
 .panel > .content {
-    background-color: #e8f1f4;
+    background-color: #cccccc;
     z-index: 1;
     font-size: 0.875rem;
 }

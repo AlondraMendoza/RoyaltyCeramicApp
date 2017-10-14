@@ -10433,7 +10433,7 @@ input[type="submit"].link:active {
     padding: .625rem;
 }
 .panel > .content {
-    background-color: #e8f1f4;
+    background-color: #f4f4f4;
     z-index: 1;
     font-size: 0.875rem;
 }
