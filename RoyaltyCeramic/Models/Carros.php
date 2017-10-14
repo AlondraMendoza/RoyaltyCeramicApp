@@ -23,6 +23,15 @@ class Carros {
         return $this->$atributo;
     }
     
+    public static function ListarCarros() {
+        $con = new Conexion();
+        $query = "SELECT Carros.* FROM Carros where Activo=1";
+        //falta agregar la sucursal
+        $datos = $con->Consultar($query);
+        $con->Cerrar();
+        return $datos;
+    }
+    
 
 }
 

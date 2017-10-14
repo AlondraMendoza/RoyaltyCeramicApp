@@ -28,6 +28,13 @@
         $("#DivOtros").fadeIn();
     }
     
+    function SeleccionCarro()
+    {
+        $('#carro').change(function(){
+        $(this).val();
+        });
+    }
+    
     function SeleccionHorno()
     {
         $('#SHorno').change(function(){
@@ -42,7 +49,7 @@
         var prod = Producto;
         var mod = Modelo;
         var col = Color;
-        alert("PRod "+ prod+ " modelo "+mod+" col "+col);
+        alert("carr "+ carro+" horno "+horno+" prod "+ prod+ " modelo "+mod+" col "+col);
         //$("#divclasificacion").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando tipos de productos con productos pendientes de clasificar...');
         //$("#divclasificacion").load("clasificador/ProductosHornoFecha", {"fecha": d, "withouttem": 1, "horno": horno});
     }
@@ -63,10 +70,22 @@
         <div class="content" id="Inicio">
             <table class="table">
                 <tr>
-                    <td style="width: 50%" class="center">
+                    <!--<td style="width: 50%" class="center">
                         <b style="font-size: 1.3em" class="fg-darkEmerald"> Clave del carro:</b><br> 
                         <div class="input-control text full-size" style="height:80px;font-size: x-large">
                             <input type="text" id="carro" placeholder="Teclea la clave del carro">
+                        </div>
+                    </td>-->
+                    <td style="width: 50%" class="center">
+                        <b style="font-size: 1.3em" class="fg-darkEmerald"> Clave del carro:</b><br>
+                        <div class="input-control select full-size" style="height: 80px;">   
+                            <select id="carro" onchange="SeleccionCarro()">
+                                <?php
+                                $productos = $datos["carros"];
+                                while ($fila = mysqli_fetch_assoc($productos)) {
+                                    ?><option value="<?php echo $fila["IdCarros"]; ?>">
+                                        <?php echo $fila["Nombre"]; ?></option><?php } ?>
+                            </select>
                         </div>
                     </td>
                     <td class="center">

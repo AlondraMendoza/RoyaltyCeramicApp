@@ -11,9 +11,11 @@ class capturistaController {
     public function capturaCarro() {
         $p = \Models\CProductos::ListarProductos();
         $h = \Models\Hornos::ListarHornos();
+        $c = \Models\Carros::ListarCarros();
         $array = [
             "listaproductos" => $p,
-            "hornos" => $h];
+            "hornos" => $h,
+            "carros" => $c,];
         return $array;
     }
 
