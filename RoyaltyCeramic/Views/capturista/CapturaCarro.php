@@ -42,6 +42,10 @@
         });
     }
     
+    $(function(){
+        $("#datepicker").datepicker();
+    });
+
     function Siguiente()
     {
         var carro = $("#carro").val();
@@ -49,7 +53,8 @@
         var prod = Producto;
         var mod = Modelo;
         var col = Color;
-        alert("carr "+ carro+" horno "+horno+" prod "+ prod+ " modelo "+mod+" col "+col);
+        var fecha = $("#fechaQ").val();
+        alert("carr "+ carro+" horno "+horno+" prod "+ prod+ " modelo "+mod+" col "+col+" fecha "+fecha);
         //$("#divclasificacion").html('<span style="font-size:5em" class="mif-spinner5 mif-ani-spin"></span> <br>Cargando tipos de productos con productos pendientes de clasificar...');
         //$("#divclasificacion").load("clasificador/ProductosHornoFecha", {"fecha": d, "withouttem": 1, "horno": horno});
     }
@@ -123,18 +128,20 @@
             <div id="DivOtros" style="display: none">
                 <table class="table">
                     <tr>
-                        <td style="width: 50%" class="center">
+                        <td style="width: 30%" class="center">
                             <b style="font-size: 1.3em" class="fg-darkEmerald">Cantidad de piezas:</b><br> 
                             <div class="input-control text full-size" style="height:80px;font-size: x-large">
                                 <input type="text" id="piezas" placeholder="Teclea la cantidad">
                             </div>
                         </td>
-                        <td class="center">
-                            <!--<b style="font-size: 1.3em" class="fg-darkEmerald">Fecha de quemado:</b><br>
+                        <td class="center" style="width: 30%" >
+                            <b style="font-size: 1.3em" class="fg-darkEmerald">Fecha de quemado:</b><br><br>
                             <div class="input-control text big-input full-size" data-role="datepicker" id="datepicker" data-locale="es" data-format="dd-mm-yyyy">
-                                <input type="text">
+                                <input type="text" id="fechaQ">
                                 <button class="button"><span class="mif-calendar"></span></button>
-                            </div>-->
+                            </div>
+                        </td>
+                        <td class="center"><br><br>
                             <div class="input-control text big-input medium-size">
                             <button class="button primary" onclick="Siguiente()">Siguiente</button></div>
                             <div class="input-control text big-input medium-size">
@@ -143,6 +150,7 @@
                     </tr>
                 </table>
             </div>
+            <div><br><br><br><br></div>
         </div>
     </div>
 </center><br><br><br>
